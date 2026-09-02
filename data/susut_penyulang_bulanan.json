@@ -1,0 +1,722 @@
+[
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 2885676,
+    "kwh_susut": 280084,
+    "susut_persen": 9.706
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 2752932,
+    "kwh_susut": 256793,
+    "susut_persen": 9.328
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 2924858,
+    "kwh_susut": 268619,
+    "susut_persen": 9.184
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 2989147,
+    "kwh_susut": 265436,
+    "susut_persen": 8.88
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 3083188,
+    "kwh_susut": 264815,
+    "susut_persen": 8.589
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 3035272,
+    "kwh_susut": 240940,
+    "susut_persen": 7.938
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 3118571,
+    "kwh_susut": 249267,
+    "susut_persen": 7.993
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 3155705,
+    "kwh_susut": 255265,
+    "susut_persen": 8.089
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 2620995,
+    "kwh_susut": 235392,
+    "susut_persen": 8.981
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 2500426,
+    "kwh_susut": 216112,
+    "susut_persen": 8.643
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 2656583,
+    "kwh_susut": 224986,
+    "susut_persen": 8.469
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 2714975,
+    "kwh_susut": 223795,
+    "susut_persen": 8.243
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 2800390,
+    "kwh_susut": 222071,
+    "susut_persen": 7.93
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 2756869,
+    "kwh_susut": 211204,
+    "susut_persen": 7.661
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 2832528,
+    "kwh_susut": 215584,
+    "susut_persen": 7.611
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 2866256,
+    "kwh_susut": 209552,
+    "susut_persen": 7.311
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 2377294,
+    "kwh_susut": 198338,
+    "susut_persen": 8.343
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 2267935,
+    "kwh_susut": 184088,
+    "susut_persen": 8.117
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 2409573,
+    "kwh_susut": 186959,
+    "susut_persen": 7.759
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 2462535,
+    "kwh_susut": 190723,
+    "susut_persen": 7.745
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 2540009,
+    "kwh_susut": 181636,
+    "susut_persen": 7.151
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 2500534,
+    "kwh_susut": 179013,
+    "susut_persen": 7.159
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 2569159,
+    "kwh_susut": 181023,
+    "susut_persen": 7.046
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 2599750,
+    "kwh_susut": 177641,
+    "susut_persen": 6.833
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 1950252,
+    "kwh_susut": 150150,
+    "susut_persen": 7.699
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 1860538,
+    "kwh_susut": 139503,
+    "susut_persen": 7.498
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 1976733,
+    "kwh_susut": 145824,
+    "susut_persen": 7.377
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 2020182,
+    "kwh_susut": 144261,
+    "susut_persen": 7.141
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 2083738,
+    "kwh_susut": 140611,
+    "susut_persen": 6.748
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 2051355,
+    "kwh_susut": 135677,
+    "susut_persen": 6.614
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 2107652,
+    "kwh_susut": 134447,
+    "susut_persen": 6.379
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 2132748,
+    "kwh_susut": 139119,
+    "susut_persen": 6.523
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 2123910,
+    "kwh_susut": 154408,
+    "susut_persen": 7.27
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 2026207,
+    "kwh_susut": 140558,
+    "susut_persen": 6.937
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 2152748,
+    "kwh_susut": 144040,
+    "susut_persen": 6.691
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 2200066,
+    "kwh_susut": 142784,
+    "susut_persen": 6.49
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 2269281,
+    "kwh_susut": 144031,
+    "susut_persen": 6.347
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 2234014,
+    "kwh_susut": 136543,
+    "susut_persen": 6.112
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 2295324,
+    "kwh_susut": 137054,
+    "susut_persen": 5.971
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 2322655,
+    "kwh_susut": 139777,
+    "susut_persen": 6.018
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 1716558,
+    "kwh_susut": 115044,
+    "susut_persen": 6.702
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 1637594,
+    "kwh_susut": 109653,
+    "susut_persen": 6.696
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 1739865,
+    "kwh_susut": 109803,
+    "susut_persen": 6.311
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 1778108,
+    "kwh_susut": 109016,
+    "susut_persen": 6.131
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 1834048,
+    "kwh_susut": 111565,
+    "susut_persen": 6.083
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 1805545,
+    "kwh_susut": 103999,
+    "susut_persen": 5.76
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 1855096,
+    "kwh_susut": 103013,
+    "susut_persen": 5.553
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 1877186,
+    "kwh_susut": 106023,
+    "susut_persen": 5.648
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 1841152,
+    "kwh_susut": 119123,
+    "susut_persen": 6.47
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 1756457,
+    "kwh_susut": 108672,
+    "susut_persen": 6.187
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 1866151,
+    "kwh_susut": 114619,
+    "susut_persen": 6.142
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 1907169,
+    "kwh_susut": 112523,
+    "susut_persen": 5.9
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 1967170,
+    "kwh_susut": 109906,
+    "susut_persen": 5.587
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 1936599,
+    "kwh_susut": 103937,
+    "susut_persen": 5.367
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 1989746,
+    "kwh_susut": 105994,
+    "susut_persen": 5.327
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 2013439,
+    "kwh_susut": 105967,
+    "susut_persen": 5.263
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 1560977,
+    "kwh_susut": 94595,
+    "susut_persen": 6.06
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 1489170,
+    "kwh_susut": 90199,
+    "susut_persen": 6.057
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 1582172,
+    "kwh_susut": 90801,
+    "susut_persen": 5.739
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 1616948,
+    "kwh_susut": 91729,
+    "susut_persen": 5.673
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 1667818,
+    "kwh_susut": 89512,
+    "susut_persen": 5.367
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 1641899,
+    "kwh_susut": 86364,
+    "susut_persen": 5.26
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 1686959,
+    "kwh_susut": 84989,
+    "susut_persen": 5.038
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 1707046,
+    "kwh_susut": 86359,
+    "susut_persen": 5.059
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 1746899,
+    "kwh_susut": 102281,
+    "susut_persen": 5.855
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 1666540,
+    "kwh_susut": 94143,
+    "susut_persen": 5.649
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 1770619,
+    "kwh_susut": 99385,
+    "susut_persen": 5.613
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 1809537,
+    "kwh_susut": 96828,
+    "susut_persen": 5.351
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 1866467,
+    "kwh_susut": 97635,
+    "susut_persen": 5.231
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 1837460,
+    "kwh_susut": 90789,
+    "susut_persen": 4.941
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 1887887,
+    "kwh_susut": 91128,
+    "susut_persen": 4.827
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 1910366,
+    "kwh_susut": 90857,
+    "susut_persen": 4.756
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 1,
+    "bulan_nama": "Jan",
+    "kwh_salur": 1021607,
+    "kwh_susut": 55872,
+    "susut_persen": 5.469
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 2,
+    "bulan_nama": "Feb",
+    "kwh_salur": 974612,
+    "kwh_susut": 50368,
+    "susut_persen": 5.168
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 3,
+    "bulan_nama": "Mar",
+    "kwh_salur": 1035478,
+    "kwh_susut": 53741,
+    "susut_persen": 5.19
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 4,
+    "bulan_nama": "Apr",
+    "kwh_salur": 1058238,
+    "kwh_susut": 52721,
+    "susut_persen": 4.982
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 5,
+    "bulan_nama": "Mei",
+    "kwh_salur": 1091531,
+    "kwh_susut": 52044,
+    "susut_persen": 4.768
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 6,
+    "bulan_nama": "Jun",
+    "kwh_salur": 1074568,
+    "kwh_susut": 48871,
+    "susut_persen": 4.548
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 7,
+    "bulan_nama": "Jul",
+    "kwh_salur": 1104058,
+    "kwh_susut": 49064,
+    "susut_persen": 4.444
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "tahun": 2026,
+    "bulan": 8,
+    "bulan_nama": "Ags",
+    "kwh_salur": 1117204,
+    "kwh_susut": 49906,
+    "susut_persen": 4.467
+  }
+]

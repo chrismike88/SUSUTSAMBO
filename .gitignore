@@ -1,0 +1,33 @@
+# Dependensi
+node_modules/
+.pnp
+.pnp.js
+
+# Hasil build
+.next/
+out/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Lingkungan
+.env
+.env*.local
+!.env.example
+
+# Vercel & Supabase
+.vercel
+supabase/.branches
+supabase/.temp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Sistem
+.DS_Store
+Thumbs.db
+*.log
+~$*.xlsx
