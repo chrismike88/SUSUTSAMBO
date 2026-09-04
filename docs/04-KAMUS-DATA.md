@@ -132,13 +132,22 @@ Indeks prioritas       = (susut/8)×40 + (unbalance/25)×25
 
 Pilih salah satu jalur.
 
-**Jalur berkas** — cocok bila belum memakai Supabase:
+**Jalur berkas CSV** — cocok bila belum memakai Supabase:
 
-1. Sunting `_NERACA_INPUT` pada `scripts/dataset.py`: masukkan kWh salur dan
-   susut bulan yang baru tutup, ubah statusnya dari proyeksi menjadi realisasi.
-2. Sunting realisasi tiap item work plan.
-3. Jalankan `python3 scripts/build_all.py`.
-4. `git add -A && git commit -m "Realisasi <bulan> <tahun>" && git push`.
+1. Buka `data/master/neraca.csv` di Excel. Isi `kwh_salur` dan `kwh_jual` bulan
+   yang baru tutup, lalu ubah `status_data` dari `PROYEKSI` menjadi `REALISASI`.
+2. Buka `data/master/program_bulanan.csv`. Isi kolom `realisasi_volume` untuk
+   bulan itu pada tiap item work plan.
+3. Buka `data/master/susut_penyulang.csv`. Tambahkan susut tiap penyulang.
+4. Perbarui `data/master/action_plan.csv` — kolom `status` dan `progres_persen`.
+5. Simpan sebagai **CSV UTF-8**, lalu jalankan:
+   ```bash
+   python3 scripts/validate_master.py
+   python3 scripts/build_all.py
+   ```
+6. `git add -A && git commit -m "Realisasi <bulan> <tahun>" && git push`.
+
+Panduan kolom per kolom ada di [`data/master/README.md`](../data/master/README.md).
 
 **Jalur Excel** — cocok bila belum ingin menyentuh kode:
 
@@ -171,13 +180,23 @@ muat satu halaman lebar) untuk lampiran laporan ke UP3.
 
 | Yang diubah | Tempatnya |
 |---|---|
-| Target susut akhir tahun | `PARAM["target_susut_akhir_tahun"]` di `scripts/dataset.py`, atau tabel `susut.parameter` |
-| Tarif rata-rata | `PARAM["tarif_rata_rata"]` |
-| Ambang status capaian | `PARAM["ambang_tercapai"]`, `ambang_waspada`, `ambang_terlambat` |
-| Target bulanan tiap item | Kolom ketiga `_PROGRAM_INPUT`, atau tabel `susut.program_periode` |
-| Faktor kWh selamat per satuan | Kolom `kwh_selamat_per_unit` pada `_PROGRAM_INPUT` / `susut.program` |
-| Menambah item work plan baru | Tambahkan satu baris pada `_PROGRAM_INPUT`, jalankan `build_all.py` |
+| Target susut akhir tahun | baris `target_susut_akhir_tahun` di `data/master/parameter.csv` |
+| Tarif rata-rata | baris `tarif_rata_rata` di berkas yang sama |
+| Ambang status capaian | baris `ambang_tercapai`, `ambang_waspada`, `ambang_terlambat` |
+| Nama & profil penyulang | `data/master/penyulang.csv` |
+| Daftar item work plan | `data/master/program.csv` |
+| Target bulanan tiap item | `data/master/program_bulanan.csv` |
+| Faktor kWh selamat per satuan | kolom `kwh_selamat_per_unit` di `data/master/program.csv` |
+| Menambah item work plan baru | tambahkan satu baris di `program.csv`, lalu 12 baris bulan di `program_bulanan.csv` |
 
-Setelah mengubah apa pun di `scripts/dataset.py`, jalankan
-`python3 scripts/build_all.py` supaya Excel, seed Supabase, dokumen work plan,
-dan data cadangan situs web ikut terhitung ulang bersamaan.
+Setelah mengubah berkas mana pun di `data/master/`, jalankan:
+
+```bash
+python3 scripts/validate_master.py   # pastikan tidak ada galat
+python3 scripts/build_all.py         # hitung ulang seluruh keluaran
+```
+
+Pemeriksa akan menolak hal-hal yang paling sering terlewat: kode penyulang
+ganda, kWh jual melebihi kWh salur, realisasi terisi pada bulan yang masih
+berstatus proyeksi, kode program yang tidak dikenal, cos φ di luar rentang
+wajar, dan bulan realisasi yang tidak berurutan.

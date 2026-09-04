@@ -3,6 +3,7 @@
 Membangun ulang SELURUH keluaran dari satu sumber data.
 
 Urutan:
+  0. scripts/validate_master.py                     (periksa data/master/*.csv)
   1. scripts/dataset.py     -> data/*.json          (sumber data tunggal)
   2. scripts/build_sql.py   -> supabase/migrations/ (seed basis data)
   3. scripts/build_excel.py -> dist/*.xlsx          (dashboard Excel)
@@ -30,6 +31,7 @@ def jalankan(skrip: str) -> None:
 
 
 def main() -> None:
+    jalankan("validate_master.py")
     jalankan("dataset.py")
     jalankan("build_sql.py")
     jalankan("build_excel.py")

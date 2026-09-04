@@ -20,40 +20,40 @@
 
 | Kategori | Item | Target kWh setahun | Terealisasi | Sisa | Capaian |
 |---|---:|---:|---:|---:|---:|
-| Teknis | 10 | 1.099.470 | 481.620 | 617.850 | 71,20% |
-| Non-teknis | 12 | 2.787.040 | 1.477.987 | 1.309.053 | 78,25% |
-| **Total** | **22** | **3.886.510** | **1.959.607** | **1.926.903** | **75,05%** |
+| Teknis | 10 | 1.099.470 | 481.827 | 617.643 | 71,20% |
+| Non-teknis | 12 | 2.787.040 | 1.477.981 | 1.309.059 | 78,25% |
+| **Total** | **22** | **3.886.510** | **1.959.808** | **1.926.702** | **75,05%** |
 
 ## Program teknis
 
 | Kode | Item work plan | Satuan | Target tahun | Target s/d bln | Realisasi | Capaian | Sisa target | Kebutuhan/bln | Faktor kejar | Sisa potensi kWh | Status | PIC |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-| T-10 | Uprating konduktor JTM (AAAC 150 mm2) | kms | 9,8 | 5,5 | 2,0 | 36,0% | 7,8 | 2,0 | 7,92× | 69.598 | KRITIS | SPV Teknik |
-| T-06 | Pemasangan kapasitor bank (perbaikan cos phi) | unit | 8,0 | 4,5 | 2,0 | 44,0% | 6,0 | 1,5 | 6,12× | 83.214 | KRITIS | SPV Teknik |
-| T-05 | Rekonfigurasi / pemecahan beban penyulang | penyulang | 6,0 | 3,4 | 1,7 | 50,0% | 4,3 | 1,1 | 5,14× | 90.720 | KRITIS | SPV Teknik |
-| T-03 | Pemasangan trafo sisip / uprating trafo overload | unit | 12,0 | 6,5 | 3,8 | 58,0% | 8,2 | 2,1 | 4,39× | 94.760 | KRITIS | SPV Teknik |
+| T-10 | Uprating konduktor JTM (AAAC 150 mm2) | kms | 9,8 | 5,5 | 2,0 | 35,6% | 7,8 | 2,0 | 8,00× | 69.776 | KRITIS | SPV Teknik |
+| T-06 | Pemasangan kapasitor bank (perbaikan cos phi) | unit | 8,0 | 4,5 | 2,0 | 44,2% | 6,0 | 1,5 | 6,08× | 83.076 | KRITIS | SPV Teknik |
+| T-05 | Rekonfigurasi / pemecahan beban penyulang | penyulang | 6,0 | 3,4 | 1,7 | 50,3% | 4,3 | 1,1 | 5,10× | 90.510 | KRITIS | SPV Teknik |
+| T-03 | Pemasangan trafo sisip / uprating trafo overload | unit | 12,0 | 6,5 | 3,8 | 57,9% | 8,2 | 2,1 | 4,40× | 94.875 | KRITIS | SPV Teknik |
 | T-08 | Pemasangan alat ukur (AMR) sisi gardu distribusi | unit | 45,0 | 24,3 | 16,3 | 67,0% | 28,7 | 7,2 | 3,53× | 38.772 | KRITIS | SPV Teknik |
-| T-02 | Penggantian konduktor JTR usang ke twisted cable | kms | 24,5 | 13,2 | 9,4 | 71,0% | 15,1 | 3,8 | 3,22× | 93.682 | KRITIS | SPV Teknik |
-| T-04 | Penggantian SR > 30 m & kabel SR usang | pelanggan | 1.450,0 | 966,7 | 802,3 | 83,0% | 647,7 | 161,9 | 1,61× | 40.156 | TERLAMBAT | SPV Teknik |
-| T-07 | Penggantian konektor & retensioning sambungan | titik | 620,0 | 413,3 | 392,7 | 95,0% | 227,3 | 56,8 | 1,16× | 32.963 | WASPADA | SPV Teknik |
+| T-02 | Penggantian konduktor JTR usang ke twisted cable | kms | 24,5 | 13,2 | 9,4 | 71,0% | 15,1 | 3,8 | 3,21× | 93.558 | KRITIS | SPV Teknik |
+| T-04 | Penggantian SR > 30 m & kabel SR usang | pelanggan | 1.450,0 | 966,6 | 802,3 | 83,0% | 647,7 | 161,9 | 1,61× | 40.155 | TERLAMBAT | SPV Teknik |
+| T-07 | Penggantian konektor & retensioning sambungan | titik | 620,0 | 413,4 | 392,7 | 95,0% | 227,3 | 56,8 | 1,16× | 32.963 | WASPADA | SPV Teknik |
 | T-09 | Pemeliharaan preventif & perbaikan grounding gardu | gardu | 240,0 | 160,0 | 163,2 | 102,0% | 76,8 | 19,2 | 0,94× | 23.808 | TERCAPAI | SPV Teknik |
-| T-01 | Penyeimbangan beban trafo distribusi (balancing) | gardu | 180,0 | 120,0 | 127,2 | 106,0% | 52,8 | 13,2 | 0,83× | 50.160 | TERCAPAI | SPV Teknik |
+| T-01 | Penyeimbangan beban trafo distribusi (balancing) | gardu | 180,0 | 120,0 | 127,2 | 106,0% | 52,8 | 13,2 | 0,83× | 50.150 | TERCAPAI | SPV Teknik |
 
 ## Program non-teknis
 
 | Kode | Item work plan | Satuan | Target tahun | Target s/d bln | Realisasi | Capaian | Sisa target | Kebutuhan/bln | Faktor kejar | Sisa potensi kWh | Status | PIC |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
-| N-09 | Penertiban & pemeteran PJU ilegal | titik | 320,0 | 172,8 | 95,0 | 55,0% | 225,0 | 56,2 | 4,73× | 143.974 | KRITIS | SPV Transaksi Energi |
+| N-09 | Penertiban & pemeteran PJU ilegal | titik | 320,0 | 172,8 | 95,0 | 55,0% | 225,0 | 56,2 | 4,73× | 143.981 | KRITIS | SPV Transaksi Energi |
 | N-12 | Penormalan sambungan langsung / sambungan liar | titik | 210,0 | 140,0 | 85,4 | 61,0% | 124,6 | 31,1 | 2,92× | 110.894 | KRITIS | SPV Transaksi Energi |
-| N-05 | Penggantian kWh meter tua (> 15 tahun) | unit | 1.900,0 | 1.026,0 | 646,4 | 63,0% | 1.253,6 | 313,4 | 3,88× | 89.007 | KRITIS | SPV Transaksi Energi |
-| N-07 | Pemeriksaan APP pelanggan potensial (>= 3.500 VA) | pelanggan | 2.400,0 | 1.600,0 | 1.104,0 | 69,0% | 1.296,0 | 324,0 | 2,35× | 75.168 | KRITIS | SPV Transaksi Energi |
-| N-03 | P2TL - realisasi penagihan tagihan susulan | Rp juta | 3.400,0 | 2.266,7 | 1.677,3 | 74,0% | 1.722,7 | 430,7 | 2,05× | – | KRITIS | SPV Transaksi Energi |
+| N-05 | Penggantian kWh meter tua (> 15 tahun) | unit | 1.900,0 | 1.026,0 | 646,4 | 63,0% | 1.253,6 | 313,4 | 3,88× | 89.008 | KRITIS | SPV Transaksi Energi |
+| N-07 | Pemeriksaan APP pelanggan potensial (>= 3.500 VA) | pelanggan | 2.400,0 | 1.600,0 | 1.104,0 | 69,0% | 1.296,0 | 324,0 | 2,35× | 75.167 | KRITIS | SPV Transaksi Energi |
+| N-03 | P2TL - realisasi penagihan tagihan susulan | Rp juta | 3.400,0 | 2.266,6 | 1.677,3 | 74,0% | 1.722,7 | 430,7 | 2,05× | – | KRITIS | SPV Transaksi Energi |
 | N-06 | Pemasangan / normalisasi AMR pelanggan >= 41,5 kVA | pelanggan | 168,0 | 112,0 | 88,5 | 79,0% | 79,5 | 19,9 | 1,80× | 117.690 | TERLAMBAT | SPV Transaksi Energi |
 | N-08 | Penurunan DLPD (Daftar Langganan Perlu Diperhatikan) | rekening | 4.200,0 | 2.800,0 | 2.268,0 | 81,0% | 1.932,0 | 483,0 | 1,70× | 85.008 | TERLAMBAT | SPV Pelayanan Pelanggan |
-| N-04 | Penggantian kWh meter rusak / macet / buram | unit | 2.750,0 | 1.833,3 | 1.576,7 | 86,0% | 1.173,3 | 293,3 | 1,49× | 112.640 | TERLAMBAT | SPV Transaksi Energi |
-| N-02 | P2TL - perolehan kWh temuan pelanggaran | kWh | 1.150.000,0 | 766.666,7 | 674.666,7 | 88,0% | 475.333,3 | 118.833,3 | 1,41× | 475.333 | TERLAMBAT | SPV Transaksi Energi |
+| N-04 | Penggantian kWh meter rusak / macet / buram | unit | 2.750,0 | 1.833,4 | 1.576,7 | 86,0% | 1.173,3 | 293,3 | 1,49× | 112.640 | TERLAMBAT | SPV Transaksi Energi |
+| N-02 | P2TL - perolehan kWh temuan pelanggaran | kWh | 1.150.000,0 | 766.666,6 | 674.666,7 | 88,0% | 475.333,3 | 118.833,3 | 1,41× | 475.333 | TERLAMBAT | SPV Transaksi Energi |
 | N-01 | P2TL - pencapaian Target Operasi (TO) | pelanggan | 3.600,0 | 2.400,0 | 2.208,0 | 92,0% | 1.392,0 | 348,0 | 1,26× | – | WASPADA | SPV Transaksi Energi |
-| N-10 | Validasi faktor kali & Data Induk Langganan (DIL) | pelanggan | 1.100,0 | 733,3 | 689,3 | 94,0% | 410,7 | 102,7 | 1,19× | 48.459 | WASPADA | SPV Pelayanan Pelanggan |
+| N-10 | Validasi faktor kali & Data Induk Langganan (DIL) | pelanggan | 1.100,0 | 733,4 | 689,3 | 94,0% | 410,7 | 102,7 | 1,19× | 48.458 | WASPADA | SPV Pelayanan Pelanggan |
 | N-11 | Peningkatan akurasi baca meter (foto stand / RBM) | rekening | 12.000,0 | 8.000,0 | 7.760,0 | 97,0% | 4.240,0 | 1.060,0 | 1,09× | 50.880 | WASPADA | SPV Pelayanan Pelanggan |
 
 ## Faktor konversi kWh diselamatkan
@@ -94,8 +94,8 @@ Item dengan tanda `–` diukur secara finansial atau sebagai aktivitas; energiny
 | Gap kWh | 1.302.223 | 40.465 |
 | Per bulan (4 bulan) | 325.556 | 10.116 |
 | Nilai finansial | Rp 1.904.500.917 | Rp 59.179.416 |
-| Sisa potensi work plan | 1.926.903 | 1.926.903 |
-| **Rasio kecukupan** | **1,48×** | **47,62×** |
+| Sisa potensi work plan | 1.926.702 | 1.926.702 |
+| **Rasio kecukupan** | **1,48×** | **47,61×** |
 
 Pada kedua tafsir, sisa potensi work plan masih melampaui gap. Namun pada skenario A marginnya hanya 1,48× — target akan lepas bila eksekusi turun di bawah sekitar 68% dari sisa target. Gunakan halaman **Simulasi Target** untuk mengujinya.
 

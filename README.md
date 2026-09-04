@@ -25,12 +25,19 @@ atas tiga keluaran yang dibangun dari **satu sumber data yang sama**:
 npm install
 pip install openpyxl xlsxwriter
 
-# 2. Bangun seluruh keluaran dari sumber data
+# 2. Isi data di data/master/*.csv  (bisa dibuka dengan Excel)
+python3 scripts/validate_master.py   # periksa konsistensinya
+
+# 3. Bangun seluruh keluaran dari data itu
 python3 scripts/build_all.py
 
-# 3. Jalankan dashboard web
+# 4. Jalankan dashboard web
 npm run dev          # http://localhost:3000
 ```
+
+Seluruh angka masukan ada di **`data/master/`** sebagai berkas CSV biasa —
+delapan berkas, semuanya bisa disunting di Excel tanpa menyentuh kode. Panduan
+kolom per kolom ada di [`data/master/README.md`](data/master/README.md).
 
 Situs berjalan **tanpa perlu Supabase** — ia memakai data contoh bawaan dan
 menandai dirinya "Data contoh". Untuk menyambungkannya ke basis data, ikuti
@@ -75,22 +82,35 @@ seluruh grafik ikut berubah dengan sendirinya.
 │   ├── supabase.ts       Klien Supabase
 │   ├── format.ts         Pemformatan angka gaya Indonesia
 │   └── fallback/         Salinan dataset untuk situs
+├── data/master/          SUMBER DATA — 8 berkas CSV, sunting di sini
+│   ├── unit.csv          identitas unit
+│   ├── parameter.csv     tarif, target susut, ambang status
+│   ├── penyulang.csv     master penyulang + profil kondisi
+│   ├── neraca.csv        kWh salur & jual per bulan
+│   ├── program.csv       katalog item work plan
+│   ├── program_bulanan.csv  target & realisasi per item per bulan
+│   ├── susut_penyulang.csv  susut per penyulang per bulan
+│   └── action_plan.csv   rencana aksi
 ├── scripts/
-│   ├── dataset.py        SUMBER DATA TUNGGAL — sunting di sini
+│   ├── dataset.py        Membaca CSV master, menghitung angka turunan
+│   ├── validate_master.py  Pemeriksa konsistensi data master
 │   ├── build_sql.py      → seed Supabase
 │   ├── build_excel.py    → dashboard Excel
 │   ├── build_docs.py     → dokumen work plan
 │   └── build_all.py      Menjalankan semuanya berurutan
 ├── supabase/migrations/  Skema, view, RLS, dan seed
 ├── docs/                 Analisis dan panduan
-├── data/                 Dataset hasil generate (JSON)
+├── data/*.json           Dataset hasil generate
 └── dist/                 Dashboard Excel hasil generate
 ```
 
-**Prinsip yang dipegang:** seluruh angka berasal dari `scripts/dataset.py`.
+**Prinsip yang dipegang:** seluruh angka berasal dari `data/master/*.csv`.
 Excel, Supabase, dan situs web tidak pernah menghitung sendiri-sendiri, sehingga
-tidak mungkin saling berbeda. Alur kerja bulanannya: sunting data → jalankan
-`build_all.py` → commit → Vercel menerbitkan ulang.
+tidak mungkin saling berbeda. Perhitungannya juga sepenuhnya deterministik —
+membangun ulang dari data yang sama selalu menghasilkan berkas yang sama.
+
+Alur kerja bulanannya: isi CSV → `validate_master.py` → `build_all.py` →
+commit → Vercel menerbitkan ulang.
 
 Pemeriksaan otomatis di GitHub Actions akan **menolak** commit yang berkas hasil
 generate-nya tidak sinkron dengan sumbernya.
@@ -105,6 +125,7 @@ generate-nya tidak sinkron dengan sumbernya.
 | [`docs/02-WORK-PLAN.md`](docs/02-WORK-PLAN.md) | Tabel capaian 22 item (dibangkitkan otomatis) |
 | [`docs/03-PANDUAN-DEPLOY.md`](docs/03-PANDUAN-DEPLOY.md) | Pemasangan Supabase + GitHub + Vercel, model keamanan, pemecahan masalah |
 | [`docs/04-KAMUS-DATA.md`](docs/04-KAMUS-DATA.md) | Kamus istilah, tabel & view, rumus, prosedur bulanan |
+| [`data/master/README.md`](data/master/README.md) | Panduan pengisian tiap kolom berkas master |
 
 ---
 

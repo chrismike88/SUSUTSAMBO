@@ -29,8 +29,8 @@
     "target_volume": 15.0,
     "realisasi_volume": 14.78,
     "target_kwh": 14250,
-    "realisasi_kwh": 14038,
-    "capaian_persen": 98.51
+    "realisasi_kwh": 14041,
+    "capaian_persen": 98.53
   },
   {
     "program_kode": "T-01",
@@ -40,8 +40,8 @@
     "target_volume": 15.0,
     "realisasi_volume": 18.37,
     "target_kwh": 14250,
-    "realisasi_kwh": 17449,
-    "capaian_persen": 122.45
+    "realisasi_kwh": 17452,
+    "capaian_persen": 122.47
   },
   {
     "program_kode": "T-01",
@@ -51,8 +51,8 @@
     "target_volume": 15.0,
     "realisasi_volume": 14.77,
     "target_kwh": 14250,
-    "realisasi_kwh": 14028,
-    "capaian_persen": 98.44
+    "realisasi_kwh": 14032,
+    "capaian_persen": 98.47
   },
   {
     "program_kode": "T-01",
@@ -62,8 +62,8 @@
     "target_volume": 15.0,
     "realisasi_volume": 15.24,
     "target_kwh": 14250,
-    "realisasi_kwh": 14479,
-    "capaian_persen": 101.61
+    "realisasi_kwh": 14478,
+    "capaian_persen": 101.6
   },
   {
     "program_kode": "T-01",
@@ -73,8 +73,8 @@
     "target_volume": 15.0,
     "realisasi_volume": 14.52,
     "target_kwh": 14250,
-    "realisasi_kwh": 13790,
-    "capaian_persen": 96.77
+    "realisasi_kwh": 13794,
+    "capaian_persen": 96.8
   },
   {
     "program_kode": "T-01",
@@ -84,7 +84,7 @@
     "target_volume": 15.0,
     "realisasi_volume": 17.23,
     "target_kwh": 14250,
-    "realisasi_kwh": 16370,
+    "realisasi_kwh": 16368,
     "capaian_persen": 114.87
   },
   {
@@ -139,8 +139,8 @@
     "target_volume": 0.49,
     "realisasi_volume": 0.39,
     "target_kwh": 3038,
-    "realisasi_kwh": 2416,
-    "capaian_persen": 79.51
+    "realisasi_kwh": 2418,
+    "capaian_persen": 79.59
   },
   {
     "program_kode": "T-02",
@@ -149,9 +149,9 @@
     "bulan_nama": "Feb",
     "target_volume": 1.23,
     "realisasi_volume": 0.76,
-    "target_kwh": 7595,
-    "realisasi_kwh": 4711,
-    "capaian_persen": 62.03
+    "target_kwh": 7626,
+    "realisasi_kwh": 4712,
+    "capaian_persen": 61.79
   },
   {
     "program_kode": "T-02",
@@ -160,9 +160,9 @@
     "bulan_nama": "Mar",
     "target_volume": 2.69,
     "realisasi_volume": 1.9,
-    "target_kwh": 16709,
-    "realisasi_kwh": 11751,
-    "capaian_persen": 70.33
+    "target_kwh": 16678,
+    "realisasi_kwh": 11780,
+    "capaian_persen": 70.63
   },
   {
     "program_kode": "T-02",
@@ -171,9 +171,9 @@
     "bulan_nama": "Apr",
     "target_volume": 1.23,
     "realisasi_volume": 0.95,
-    "target_kwh": 7595,
-    "realisasi_kwh": 5871,
-    "capaian_persen": 77.3
+    "target_kwh": 7626,
+    "realisasi_kwh": 5890,
+    "capaian_persen": 77.24
   },
   {
     "program_kode": "T-02",
@@ -182,9 +182,9 @@
     "bulan_nama": "Mei",
     "target_volume": 1.72,
     "realisasi_volume": 1.29,
-    "target_kwh": 10633,
-    "realisasi_kwh": 7968,
-    "capaian_persen": 74.94
+    "target_kwh": 10664,
+    "realisasi_kwh": 7998,
+    "capaian_persen": 75.0
   },
   {
     "program_kode": "T-02",
@@ -194,8 +194,8 @@
     "target_volume": 2.94,
     "realisasi_volume": 1.88,
     "target_kwh": 18228,
-    "realisasi_kwh": 11652,
-    "capaian_persen": 63.93
+    "realisasi_kwh": 11656,
+    "capaian_persen": 63.95
   },
   {
     "program_kode": "T-02",
@@ -204,9 +204,9 @@
     "bulan_nama": "Jul",
     "target_volume": 1.23,
     "realisasi_volume": 0.9,
-    "target_kwh": 7595,
-    "realisasi_kwh": 5557,
-    "capaian_persen": 73.16
+    "target_kwh": 7626,
+    "realisasi_kwh": 5580,
+    "capaian_persen": 73.17
   },
   {
     "program_kode": "T-02",
@@ -215,9 +215,9 @@
     "bulan_nama": "Ags",
     "target_volume": 1.72,
     "realisasi_volume": 1.34,
-    "target_kwh": 10633,
-    "realisasi_kwh": 8312,
-    "capaian_persen": 78.17
+    "target_kwh": 10664,
+    "realisasi_kwh": 8308,
+    "capaian_persen": 77.91
   },
   {
     "program_kode": "T-02",
@@ -226,7 +226,7 @@
     "bulan_nama": "Sep",
     "target_volume": 3.19,
     "realisasi_volume": null,
-    "target_kwh": 19747,
+    "target_kwh": 19778,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -248,7 +248,7 @@
     "bulan_nama": "Nov",
     "target_volume": 2.69,
     "realisasi_volume": null,
-    "target_kwh": 16709,
+    "target_kwh": 16678,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -271,8 +271,8 @@
     "target_volume": 0.24,
     "realisasi_volume": 0.14,
     "target_kwh": 2760,
-    "realisasi_kwh": 1600,
-    "capaian_persen": 57.99
+    "realisasi_kwh": 1610,
+    "capaian_persen": 58.33
   },
   {
     "program_kode": "T-03",
@@ -282,8 +282,8 @@
     "target_volume": 0.6,
     "realisasi_volume": 0.36,
     "target_kwh": 6900,
-    "realisasi_kwh": 4180,
-    "capaian_persen": 60.58
+    "realisasi_kwh": 4140,
+    "capaian_persen": 60.0
   },
   {
     "program_kode": "T-03",
@@ -293,8 +293,8 @@
     "target_volume": 1.32,
     "realisasi_volume": 0.73,
     "target_kwh": 15180,
-    "realisasi_kwh": 8404,
-    "capaian_persen": 55.36
+    "realisasi_kwh": 8395,
+    "capaian_persen": 55.3
   },
   {
     "program_kode": "T-03",
@@ -304,8 +304,8 @@
     "target_volume": 0.6,
     "realisasi_volume": 0.38,
     "target_kwh": 6900,
-    "realisasi_kwh": 4391,
-    "capaian_persen": 63.63
+    "realisasi_kwh": 4370,
+    "capaian_persen": 63.33
   },
   {
     "program_kode": "T-03",
@@ -315,8 +315,8 @@
     "target_volume": 0.84,
     "realisasi_volume": 0.48,
     "target_kwh": 9660,
-    "realisasi_kwh": 5496,
-    "capaian_persen": 56.89
+    "realisasi_kwh": 5520,
+    "capaian_persen": 57.14
   },
   {
     "program_kode": "T-03",
@@ -326,8 +326,8 @@
     "target_volume": 1.44,
     "realisasi_volume": 0.85,
     "target_kwh": 16560,
-    "realisasi_kwh": 9823,
-    "capaian_persen": 59.32
+    "realisasi_kwh": 9775,
+    "capaian_persen": 59.03
   },
   {
     "program_kode": "T-03",
@@ -337,8 +337,8 @@
     "target_volume": 0.6,
     "realisasi_volume": 0.3,
     "target_kwh": 6900,
-    "realisasi_kwh": 3432,
-    "capaian_persen": 49.74
+    "realisasi_kwh": 3450,
+    "capaian_persen": 50.0
   },
   {
     "program_kode": "T-03",
@@ -348,8 +348,8 @@
     "target_volume": 0.84,
     "realisasi_volume": 0.51,
     "target_kwh": 9660,
-    "realisasi_kwh": 5895,
-    "capaian_persen": 61.03
+    "realisasi_kwh": 5865,
+    "capaian_persen": 60.71
   },
   {
     "program_kode": "T-03",
@@ -402,9 +402,9 @@
     "bulan_nama": "Jan",
     "target_volume": 120.83,
     "realisasi_volume": 99.46,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": 6167,
-    "capaian_persen": 82.32
+    "capaian_persen": 82.31
   },
   {
     "program_kode": "T-04",
@@ -413,9 +413,9 @@
     "bulan_nama": "Feb",
     "target_volume": 120.83,
     "realisasi_volume": 102.33,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": 6344,
-    "capaian_persen": 84.68
+    "capaian_persen": 84.69
   },
   {
     "program_kode": "T-04",
@@ -424,7 +424,7 @@
     "bulan_nama": "Mar",
     "target_volume": 120.83,
     "realisasi_volume": 111.2,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": 6894,
     "capaian_persen": 92.03
   },
@@ -435,9 +435,9 @@
     "bulan_nama": "Apr",
     "target_volume": 120.83,
     "realisasi_volume": 99.22,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": 6152,
-    "capaian_persen": 82.11
+    "capaian_persen": 82.12
   },
   {
     "program_kode": "T-04",
@@ -446,8 +446,8 @@
     "bulan_nama": "Mei",
     "target_volume": 120.83,
     "realisasi_volume": 89.57,
-    "target_kwh": 7492,
-    "realisasi_kwh": 5554,
+    "target_kwh": 7491,
+    "realisasi_kwh": 5553,
     "capaian_persen": 74.13
   },
   {
@@ -457,7 +457,7 @@
     "bulan_nama": "Jun",
     "target_volume": 120.83,
     "realisasi_volume": 85.32,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": 5290,
     "capaian_persen": 70.61
   },
@@ -468,7 +468,7 @@
     "bulan_nama": "Jul",
     "target_volume": 120.83,
     "realisasi_volume": 120.11,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": 7447,
     "capaian_persen": 99.4
   },
@@ -479,7 +479,7 @@
     "bulan_nama": "Ags",
     "target_volume": 120.83,
     "realisasi_volume": 95.13,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": 5898,
     "capaian_persen": 78.73
   },
@@ -490,7 +490,7 @@
     "bulan_nama": "Sep",
     "target_volume": 120.83,
     "realisasi_volume": null,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -501,7 +501,7 @@
     "bulan_nama": "Okt",
     "target_volume": 120.83,
     "realisasi_volume": null,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -512,7 +512,7 @@
     "bulan_nama": "Nov",
     "target_volume": 120.83,
     "realisasi_volume": null,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -523,7 +523,7 @@
     "bulan_nama": "Des",
     "target_volume": 120.83,
     "realisasi_volume": null,
-    "target_kwh": 7492,
+    "target_kwh": 7491,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -546,8 +546,8 @@
     "target_volume": 0.12,
     "realisasi_volume": 0.06,
     "target_kwh": 2520,
-    "realisasi_kwh": 1200,
-    "capaian_persen": 47.64
+    "realisasi_kwh": 1260,
+    "capaian_persen": 50.0
   },
   {
     "program_kode": "T-05",
@@ -557,8 +557,8 @@
     "target_volume": 0.36,
     "realisasi_volume": 0.16,
     "target_kwh": 7560,
-    "realisasi_kwh": 3401,
-    "capaian_persen": 44.98
+    "realisasi_kwh": 3360,
+    "capaian_persen": 44.44
   },
   {
     "program_kode": "T-05",
@@ -568,8 +568,8 @@
     "target_volume": 0.54,
     "realisasi_volume": 0.28,
     "target_kwh": 11340,
-    "realisasi_kwh": 5781,
-    "capaian_persen": 50.98
+    "realisasi_kwh": 5880,
+    "capaian_persen": 51.85
   },
   {
     "program_kode": "T-05",
@@ -579,8 +579,8 @@
     "target_volume": 0.72,
     "realisasi_volume": 0.37,
     "target_kwh": 15120,
-    "realisasi_kwh": 7861,
-    "capaian_persen": 51.99
+    "realisasi_kwh": 7770,
+    "capaian_persen": 51.39
   },
   {
     "program_kode": "T-05",
@@ -590,8 +590,8 @@
     "target_volume": 0.96,
     "realisasi_volume": 0.52,
     "target_kwh": 20160,
-    "realisasi_kwh": 10839,
-    "capaian_persen": 53.77
+    "realisasi_kwh": 10920,
+    "capaian_persen": 54.17
   },
   {
     "program_kode": "T-05",
@@ -601,8 +601,8 @@
     "target_volume": 0.24,
     "realisasi_volume": 0.12,
     "target_kwh": 5040,
-    "realisasi_kwh": 2426,
-    "capaian_persen": 48.13
+    "realisasi_kwh": 2520,
+    "capaian_persen": 50.0
   },
   {
     "program_kode": "T-05",
@@ -612,8 +612,8 @@
     "target_volume": 0.42,
     "realisasi_volume": 0.18,
     "target_kwh": 8820,
-    "realisasi_kwh": 3773,
-    "capaian_persen": 42.77
+    "realisasi_kwh": 3780,
+    "capaian_persen": 42.86
   },
   {
     "program_kode": "T-05",
@@ -678,8 +678,8 @@
     "target_volume": 0.16,
     "realisasi_volume": 0.08,
     "target_kwh": 2208,
-    "realisasi_kwh": 1083,
-    "capaian_persen": 49.06
+    "realisasi_kwh": 1104,
+    "capaian_persen": 50.0
   },
   {
     "program_kode": "T-06",
@@ -689,8 +689,8 @@
     "target_volume": 0.48,
     "realisasi_volume": 0.26,
     "target_kwh": 6624,
-    "realisasi_kwh": 3535,
-    "capaian_persen": 53.37
+    "realisasi_kwh": 3588,
+    "capaian_persen": 54.17
   },
   {
     "program_kode": "T-06",
@@ -700,8 +700,8 @@
     "target_volume": 0.72,
     "realisasi_volume": 0.31,
     "target_kwh": 9936,
-    "realisasi_kwh": 4216,
-    "capaian_persen": 42.43
+    "realisasi_kwh": 4278,
+    "capaian_persen": 43.06
   },
   {
     "program_kode": "T-06",
@@ -711,8 +711,8 @@
     "target_volume": 0.96,
     "realisasi_volume": 0.41,
     "target_kwh": 13248,
-    "realisasi_kwh": 5646,
-    "capaian_persen": 42.61
+    "realisasi_kwh": 5658,
+    "capaian_persen": 42.71
   },
   {
     "program_kode": "T-06",
@@ -722,8 +722,8 @@
     "target_volume": 1.28,
     "realisasi_volume": 0.49,
     "target_kwh": 17664,
-    "realisasi_kwh": 6814,
-    "capaian_persen": 38.57
+    "realisasi_kwh": 6762,
+    "capaian_persen": 38.28
   },
   {
     "program_kode": "T-06",
@@ -733,8 +733,8 @@
     "target_volume": 0.32,
     "realisasi_volume": 0.14,
     "target_kwh": 4416,
-    "realisasi_kwh": 1914,
-    "capaian_persen": 43.34
+    "realisasi_kwh": 1932,
+    "capaian_persen": 43.75
   },
   {
     "program_kode": "T-06",
@@ -744,8 +744,8 @@
     "target_volume": 0.56,
     "realisasi_volume": 0.29,
     "target_kwh": 7728,
-    "realisasi_kwh": 3995,
-    "capaian_persen": 51.7
+    "realisasi_kwh": 4002,
+    "capaian_persen": 51.79
   },
   {
     "program_kode": "T-06",
@@ -800,7 +800,7 @@
     "realisasi_volume": 53.23,
     "target_kwh": 7492,
     "realisasi_kwh": 7718,
-    "capaian_persen": 103.03
+    "capaian_persen": 103.02
   },
   {
     "program_kode": "T-07",
@@ -810,7 +810,7 @@
     "target_volume": 51.67,
     "realisasi_volume": 49.68,
     "target_kwh": 7492,
-    "realisasi_kwh": 7203,
+    "realisasi_kwh": 7204,
     "capaian_persen": 96.15
   },
   {
@@ -822,7 +822,7 @@
     "realisasi_volume": 50.44,
     "target_kwh": 7492,
     "realisasi_kwh": 7314,
-    "capaian_persen": 97.63
+    "capaian_persen": 97.62
   },
   {
     "program_kode": "T-07",
@@ -865,8 +865,8 @@
     "target_volume": 51.67,
     "realisasi_volume": 47.29,
     "target_kwh": 7492,
-    "realisasi_kwh": 6858,
-    "capaian_persen": 91.54
+    "realisasi_kwh": 6857,
+    "capaian_persen": 91.52
   },
   {
     "program_kode": "T-07",
@@ -877,7 +877,7 @@
     "realisasi_volume": 50.3,
     "target_kwh": 7492,
     "realisasi_kwh": 7294,
-    "capaian_persen": 97.36
+    "capaian_persen": 97.35
   },
   {
     "program_kode": "T-07",
@@ -931,8 +931,8 @@
     "target_volume": 0.9,
     "realisasi_volume": 0.79,
     "target_kwh": 1215,
-    "realisasi_kwh": 1069,
-    "capaian_persen": 88.0
+    "realisasi_kwh": 1066,
+    "capaian_persen": 87.78
   },
   {
     "program_kode": "T-08",
@@ -942,8 +942,8 @@
     "target_volume": 2.25,
     "realisasi_volume": 1.38,
     "target_kwh": 3038,
-    "realisasi_kwh": 1867,
-    "capaian_persen": 61.48
+    "realisasi_kwh": 1863,
+    "capaian_persen": 61.33
   },
   {
     "program_kode": "T-08",
@@ -953,8 +953,8 @@
     "target_volume": 4.95,
     "realisasi_volume": 3.1,
     "target_kwh": 6682,
-    "realisasi_kwh": 4191,
-    "capaian_persen": 62.71
+    "realisasi_kwh": 4185,
+    "capaian_persen": 62.63
   },
   {
     "program_kode": "T-08",
@@ -964,8 +964,8 @@
     "target_volume": 2.25,
     "realisasi_volume": 1.67,
     "target_kwh": 3038,
-    "realisasi_kwh": 2251,
-    "capaian_persen": 74.1
+    "realisasi_kwh": 2254,
+    "capaian_persen": 74.22
   },
   {
     "program_kode": "T-08",
@@ -974,9 +974,9 @@
     "bulan_nama": "Mei",
     "target_volume": 3.15,
     "realisasi_volume": 2.07,
-    "target_kwh": 4253,
-    "realisasi_kwh": 2793,
-    "capaian_persen": 65.67
+    "target_kwh": 4252,
+    "realisasi_kwh": 2794,
+    "capaian_persen": 65.71
   },
   {
     "program_kode": "T-08",
@@ -986,7 +986,7 @@
     "target_volume": 5.4,
     "realisasi_volume": 3.38,
     "target_kwh": 7290,
-    "realisasi_kwh": 4562,
+    "realisasi_kwh": 4563,
     "capaian_persen": 62.59
   },
   {
@@ -1007,9 +1007,9 @@
     "bulan_nama": "Ags",
     "target_volume": 3.15,
     "realisasi_volume": 2.07,
-    "target_kwh": 4253,
-    "realisasi_kwh": 2789,
-    "capaian_persen": 65.58
+    "target_kwh": 4252,
+    "realisasi_kwh": 2794,
+    "capaian_persen": 65.71
   },
   {
     "program_kode": "T-08",
@@ -1018,7 +1018,7 @@
     "bulan_nama": "Sep",
     "target_volume": 5.85,
     "realisasi_volume": null,
-    "target_kwh": 7898,
+    "target_kwh": 7897,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -1063,8 +1063,8 @@
     "target_volume": 20.0,
     "realisasi_volume": 22.79,
     "target_kwh": 6200,
-    "realisasi_kwh": 7064,
-    "capaian_persen": 113.93
+    "realisasi_kwh": 7065,
+    "capaian_persen": 113.95
   },
   {
     "program_kode": "T-09",
@@ -1107,8 +1107,8 @@
     "target_volume": 20.0,
     "realisasi_volume": 23.61,
     "target_kwh": 6200,
-    "realisasi_kwh": 7320,
-    "capaian_persen": 118.07
+    "realisasi_kwh": 7319,
+    "capaian_persen": 118.05
   },
   {
     "program_kode": "T-09",
@@ -1118,8 +1118,8 @@
     "target_volume": 20.0,
     "realisasi_volume": 19.35,
     "target_kwh": 6200,
-    "realisasi_kwh": 6000,
-    "capaian_persen": 96.77
+    "realisasi_kwh": 5998,
+    "capaian_persen": 96.75
   },
   {
     "program_kode": "T-09",
@@ -1140,8 +1140,8 @@
     "target_volume": 20.0,
     "realisasi_volume": 17.39,
     "target_kwh": 6200,
-    "realisasi_kwh": 5390,
-    "capaian_persen": 86.93
+    "realisasi_kwh": 5391,
+    "capaian_persen": 86.95
   },
   {
     "program_kode": "T-09",
@@ -1205,9 +1205,9 @@
     "bulan_nama": "Feb",
     "target_volume": 0.2,
     "realisasi_volume": 0.07,
-    "target_kwh": 1744,
-    "realisasi_kwh": 631,
-    "capaian_persen": 36.16
+    "target_kwh": 1780,
+    "realisasi_kwh": 623,
+    "capaian_persen": 35.0
   },
   {
     "program_kode": "T-10",
@@ -1216,9 +1216,9 @@
     "bulan_nama": "Mar",
     "target_volume": 0.59,
     "realisasi_volume": 0.18,
-    "target_kwh": 5233,
-    "realisasi_kwh": 1638,
-    "capaian_persen": 31.3
+    "target_kwh": 5251,
+    "realisasi_kwh": 1602,
+    "capaian_persen": 30.51
   },
   {
     "program_kode": "T-10",
@@ -1227,9 +1227,9 @@
     "bulan_nama": "Apr",
     "target_volume": 0.88,
     "realisasi_volume": 0.35,
-    "target_kwh": 7850,
-    "realisasi_kwh": 3150,
-    "capaian_persen": 40.13
+    "target_kwh": 7832,
+    "realisasi_kwh": 3115,
+    "capaian_persen": 39.77
   },
   {
     "program_kode": "T-10",
@@ -1238,9 +1238,9 @@
     "bulan_nama": "Mei",
     "target_volume": 1.18,
     "realisasi_volume": 0.44,
-    "target_kwh": 10466,
-    "realisasi_kwh": 3919,
-    "capaian_persen": 37.44
+    "target_kwh": 10502,
+    "realisasi_kwh": 3916,
+    "capaian_persen": 37.29
   },
   {
     "program_kode": "T-10",
@@ -1249,9 +1249,9 @@
     "bulan_nama": "Jun",
     "target_volume": 1.57,
     "realisasi_volume": 0.51,
-    "target_kwh": 13955,
-    "realisasi_kwh": 4577,
-    "capaian_persen": 32.8
+    "target_kwh": 13973,
+    "realisasi_kwh": 4539,
+    "capaian_persen": 32.48
   },
   {
     "program_kode": "T-10",
@@ -1260,9 +1260,9 @@
     "bulan_nama": "Jul",
     "target_volume": 0.39,
     "realisasi_volume": 0.16,
-    "target_kwh": 3489,
-    "realisasi_kwh": 1415,
-    "capaian_persen": 40.56
+    "target_kwh": 3471,
+    "realisasi_kwh": 1424,
+    "capaian_persen": 41.03
   },
   {
     "program_kode": "T-10",
@@ -1271,9 +1271,9 @@
     "bulan_nama": "Ags",
     "target_volume": 0.69,
     "realisasi_volume": 0.25,
-    "target_kwh": 6105,
-    "realisasi_kwh": 2254,
-    "capaian_persen": 36.92
+    "target_kwh": 6141,
+    "realisasi_kwh": 2225,
+    "capaian_persen": 36.23
   },
   {
     "program_kode": "T-10",
@@ -1293,7 +1293,7 @@
     "bulan_nama": "Okt",
     "target_volume": 1.18,
     "realisasi_volume": null,
-    "target_kwh": 10466,
+    "target_kwh": 10502,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -1315,7 +1315,7 @@
     "bulan_nama": "Des",
     "target_volume": 1.18,
     "realisasi_volume": null,
-    "target_kwh": 10466,
+    "target_kwh": 10502,
     "realisasi_kwh": null,
     "capaian_persen": null
   },
@@ -1625,7 +1625,7 @@
     "realisasi_volume": 202.88,
     "target_kwh": 0,
     "realisasi_kwh": 0,
-    "capaian_persen": 71.6
+    "capaian_persen": 71.61
   },
   {
     "program_kode": "N-03",
@@ -1745,7 +1745,7 @@
     "target_volume": 229.17,
     "realisasi_volume": 177.12,
     "target_kwh": 22000,
-    "realisasi_kwh": 17003,
+    "realisasi_kwh": 17004,
     "capaian_persen": 77.29
   },
   {
@@ -1756,7 +1756,7 @@
     "target_volume": 229.17,
     "realisasi_volume": 213.38,
     "target_kwh": 22000,
-    "realisasi_kwh": 20485,
+    "realisasi_kwh": 20484,
     "capaian_persen": 93.11
   },
   {
@@ -1767,7 +1767,7 @@
     "target_volume": 229.17,
     "realisasi_volume": 221.67,
     "target_kwh": 22000,
-    "realisasi_kwh": 21281,
+    "realisasi_kwh": 21280,
     "capaian_persen": 96.73
   },
   {
@@ -1856,7 +1856,7 @@
     "realisasi_volume": 29.32,
     "target_kwh": 2698,
     "realisasi_kwh": 2082,
-    "capaian_persen": 77.15
+    "capaian_persen": 77.16
   },
   {
     "program_kode": "N-05",
@@ -1900,7 +1900,7 @@
     "realisasi_volume": 100.62,
     "target_kwh": 9443,
     "realisasi_kwh": 7144,
-    "capaian_persen": 75.66
+    "capaian_persen": 75.65
   },
   {
     "program_kode": "N-05",
@@ -1921,7 +1921,7 @@
     "target_volume": 95.0,
     "realisasi_volume": 64.71,
     "target_kwh": 6745,
-    "realisasi_kwh": 4595,
+    "realisasi_kwh": 4594,
     "capaian_persen": 68.12
   },
   {
@@ -1987,8 +1987,8 @@
     "target_volume": 14.0,
     "realisasi_volume": 12.21,
     "target_kwh": 20720,
-    "realisasi_kwh": 18075,
-    "capaian_persen": 87.23
+    "realisasi_kwh": 18071,
+    "capaian_persen": 87.21
   },
   {
     "program_kode": "N-06",
@@ -1998,8 +1998,8 @@
     "target_volume": 14.0,
     "realisasi_volume": 9.38,
     "target_kwh": 20720,
-    "realisasi_kwh": 13885,
-    "capaian_persen": 67.01
+    "realisasi_kwh": 13882,
+    "capaian_persen": 67.0
   },
   {
     "program_kode": "N-06",
@@ -2009,8 +2009,8 @@
     "target_volume": 14.0,
     "realisasi_volume": 8.98,
     "target_kwh": 20720,
-    "realisasi_kwh": 13294,
-    "capaian_persen": 64.16
+    "realisasi_kwh": 13290,
+    "capaian_persen": 64.14
   },
   {
     "program_kode": "N-06",
@@ -2020,8 +2020,8 @@
     "target_volume": 14.0,
     "realisasi_volume": 11.77,
     "target_kwh": 20720,
-    "realisasi_kwh": 17413,
-    "capaian_persen": 84.04
+    "realisasi_kwh": 17420,
+    "capaian_persen": 84.07
   },
   {
     "program_kode": "N-06",
@@ -2031,8 +2031,8 @@
     "target_volume": 14.0,
     "realisasi_volume": 11.51,
     "target_kwh": 20720,
-    "realisasi_kwh": 17038,
-    "capaian_persen": 82.23
+    "realisasi_kwh": 17035,
+    "capaian_persen": 82.21
   },
   {
     "program_kode": "N-06",
@@ -2042,8 +2042,8 @@
     "target_volume": 14.0,
     "realisasi_volume": 11.72,
     "target_kwh": 20720,
-    "realisasi_kwh": 17343,
-    "capaian_persen": 83.7
+    "realisasi_kwh": 17346,
+    "capaian_persen": 83.71
   },
   {
     "program_kode": "N-06",
@@ -2064,8 +2064,8 @@
     "target_volume": 14.0,
     "realisasi_volume": 11.68,
     "target_kwh": 20720,
-    "realisasi_kwh": 17284,
-    "capaian_persen": 83.42
+    "realisasi_kwh": 17286,
+    "capaian_persen": 83.43
   },
   {
     "program_kode": "N-06",
@@ -2142,7 +2142,7 @@
     "realisasi_volume": 140.63,
     "target_kwh": 11600,
     "realisasi_kwh": 8157,
-    "capaian_persen": 70.32
+    "capaian_persen": 70.31
   },
   {
     "program_kode": "N-07",
@@ -2164,7 +2164,7 @@
     "realisasi_volume": 122.29,
     "target_kwh": 11600,
     "realisasi_kwh": 7093,
-    "capaian_persen": 61.14
+    "capaian_persen": 61.15
   },
   {
     "program_kode": "N-07",
@@ -2185,7 +2185,7 @@
     "target_volume": 200.0,
     "realisasi_volume": 117.13,
     "target_kwh": 11600,
-    "realisasi_kwh": 6793,
+    "realisasi_kwh": 6794,
     "capaian_persen": 58.56
   },
   {
@@ -2197,7 +2197,7 @@
     "realisasi_volume": 149.73,
     "target_kwh": 11600,
     "realisasi_kwh": 8684,
-    "capaian_persen": 74.87
+    "capaian_persen": 74.86
   },
   {
     "program_kode": "N-07",
@@ -2383,8 +2383,8 @@
     "target_volume": 6.4,
     "realisasi_volume": 4.07,
     "target_kwh": 4096,
-    "realisasi_kwh": 2607,
-    "capaian_persen": 63.66
+    "realisasi_kwh": 2605,
+    "capaian_persen": 63.59
   },
   {
     "program_kode": "N-09",
@@ -2394,8 +2394,8 @@
     "target_volume": 16.0,
     "realisasi_volume": 9.81,
     "target_kwh": 10240,
-    "realisasi_kwh": 6277,
-    "capaian_persen": 61.3
+    "realisasi_kwh": 6278,
+    "capaian_persen": 61.31
   },
   {
     "program_kode": "N-09",
@@ -2416,8 +2416,8 @@
     "target_volume": 16.0,
     "realisasi_volume": 8.98,
     "target_kwh": 10240,
-    "realisasi_kwh": 5746,
-    "capaian_persen": 56.11
+    "realisasi_kwh": 5747,
+    "capaian_persen": 56.12
   },
   {
     "program_kode": "N-09",
@@ -2438,7 +2438,7 @@
     "target_volume": 38.4,
     "realisasi_volume": 18.27,
     "target_kwh": 24576,
-    "realisasi_kwh": 11694,
+    "realisasi_kwh": 11693,
     "capaian_persen": 47.58
   },
   {
@@ -2449,8 +2449,8 @@
     "target_volume": 16.0,
     "realisasi_volume": 8.12,
     "target_kwh": 10240,
-    "realisasi_kwh": 5200,
-    "capaian_persen": 50.78
+    "realisasi_kwh": 5197,
+    "capaian_persen": 50.75
   },
   {
     "program_kode": "N-09",
@@ -2460,8 +2460,8 @@
     "target_volume": 22.4,
     "realisasi_volume": 12.77,
     "target_kwh": 14336,
-    "realisasi_kwh": 8175,
-    "capaian_persen": 57.03
+    "realisasi_kwh": 8173,
+    "capaian_persen": 57.01
   },
   {
     "program_kode": "N-09",
@@ -2515,7 +2515,7 @@
     "target_volume": 91.67,
     "realisasi_volume": 92.73,
     "target_kwh": 10817,
-    "realisasi_kwh": 10943,
+    "realisasi_kwh": 10942,
     "capaian_persen": 101.16
   },
   {
@@ -2527,7 +2527,7 @@
     "realisasi_volume": 87.73,
     "target_kwh": 10817,
     "realisasi_kwh": 10352,
-    "capaian_persen": 95.71
+    "capaian_persen": 95.7
   },
   {
     "program_kode": "N-10",
@@ -2559,7 +2559,7 @@
     "target_volume": 91.67,
     "realisasi_volume": 84.88,
     "target_kwh": 10817,
-    "realisasi_kwh": 10015,
+    "realisasi_kwh": 10016,
     "capaian_persen": 92.59
   },
   {
@@ -2779,8 +2779,8 @@
     "target_volume": 17.5,
     "realisasi_volume": 9.2,
     "target_kwh": 15575,
-    "realisasi_kwh": 8186,
-    "capaian_persen": 52.56
+    "realisasi_kwh": 8188,
+    "capaian_persen": 52.57
   },
   {
     "program_kode": "N-12",
@@ -2790,8 +2790,8 @@
     "target_volume": 17.5,
     "realisasi_volume": 9.91,
     "target_kwh": 15575,
-    "realisasi_kwh": 8822,
-    "capaian_persen": 56.64
+    "realisasi_kwh": 8820,
+    "capaian_persen": 56.63
   },
   {
     "program_kode": "N-12",
@@ -2812,7 +2812,7 @@
     "target_volume": 17.5,
     "realisasi_volume": 12.52,
     "target_kwh": 15575,
-    "realisasi_kwh": 11142,
+    "realisasi_kwh": 11143,
     "capaian_persen": 71.54
   },
   {
@@ -2823,8 +2823,8 @@
     "target_volume": 17.5,
     "realisasi_volume": 9.65,
     "target_kwh": 15575,
-    "realisasi_kwh": 8586,
-    "capaian_persen": 55.12
+    "realisasi_kwh": 8588,
+    "capaian_persen": 55.14
   },
   {
     "program_kode": "N-12",
@@ -2834,8 +2834,8 @@
     "target_volume": 17.5,
     "realisasi_volume": 12.37,
     "target_kwh": 15575,
-    "realisasi_kwh": 11008,
-    "capaian_persen": 70.68
+    "realisasi_kwh": 11009,
+    "capaian_persen": 70.69
   },
   {
     "program_kode": "N-12",
@@ -2845,8 +2845,8 @@
     "target_volume": 17.5,
     "realisasi_volume": 10.22,
     "target_kwh": 15575,
-    "realisasi_kwh": 9097,
-    "capaian_persen": 58.41
+    "realisasi_kwh": 9096,
+    "capaian_persen": 58.4
   },
   {
     "program_kode": "N-12",
@@ -2856,8 +2856,8 @@
     "target_volume": 17.5,
     "realisasi_volume": 10.18,
     "target_kwh": 15575,
-    "realisasi_kwh": 9065,
-    "capaian_persen": 58.2
+    "realisasi_kwh": 9060,
+    "capaian_persen": 58.17
   },
   {
     "program_kode": "N-12",

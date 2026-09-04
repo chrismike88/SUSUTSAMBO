@@ -27,6 +27,9 @@ jobs:
           npm ci
           python -m pip install --quiet openpyxl xlsxwriter
 
+      - name: Periksa konsistensi data master
+        run: python scripts/validate_master.py
+
       - name: Bangun ulang data, seed SQL, dan dashboard Excel
         run: python scripts/build_all.py
 

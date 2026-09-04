@@ -5,7 +5,7 @@
 > konsisten secara matematis untuk membangun dashboard. Angka ini **bukan**
 > realisasi ULP Samboja yang sebenarnya. Ganti isinya dengan data riil dari
 > AP2T, XPower/EIS-Susut, Aplikasi P2TL, dan SCADA/AMR, lalu jalankan
-> `python3 scripts/build_all.py` — seluruh analisis, dashboard Excel, seed
+> `python3 scripts/build_all.py` — seluruh dashboard Excel, seed
 > Supabase, dan situs web akan ikut terhitung ulang dengan sendirinya.
 > Metode, struktur, dan rumusnya tetap berlaku apa pun angkanya.
 
@@ -328,20 +328,22 @@ Beberapa hal yang perlu diketahui agar angkanya tidak dibaca berlebihan:
 
 ## 8. Cara memperbarui analisis ini dengan data riil
 
-| Data | Sumber | Masuk ke |
+| Data | Sumber | Masuk ke berkas |
 |---|---|---|
-| kWh salur per penyulang | XPower / EIS-Susut (APP outgoing GI) | `_NERACA_INPUT`, `susut.neraca_energi` |
-| kWh jual | AP2T / TUL — rekening terbit | idem |
-| Realisasi program teknis | Laporan regu pemeliharaan, aplikasi Gardu/JDN | `susut.program_periode` |
-| Temuan & tagihan P2TL | Aplikasi P2TL | `susut.p2tl` |
-| Unbalance, cos φ, tegangan | SCADA, AMR gardu, pengukuran manual | `susut.penyulang` |
-| Aset jaringan | Aplikasi jaringan distribusi | `susut.penyulang` |
+| kWh salur & jual | XPower/EIS-Susut (APP outgoing GI) + AP2T | `data/master/neraca.csv` |
+| Susut per penyulang | EIS-Susut | `data/master/susut_penyulang.csv` |
+| Realisasi program | Laporan regu, aplikasi Gardu/JDN, aplikasi P2TL | `data/master/program_bulanan.csv` |
+| Unbalance, cos φ, tegangan | SCADA, AMR gardu, pengukuran manual | `data/master/penyulang.csv` |
+| Aset jaringan | Aplikasi jaringan distribusi | `data/master/penyulang.csv` |
+| Daftar item work plan | Work plan unit | `data/master/program.csv` |
 
 Dua cara memperbarui:
 
-- **Lewat berkas** — sunting tabel di `scripts/dataset.py`, jalankan
+- **Lewat berkas CSV** — sunting `data/master/*.csv` (bisa dengan Excel),
+  jalankan `python3 scripts/validate_master.py` lalu
   `python3 scripts/build_all.py`, commit, dan Vercel akan menerbitkan ulang
-  situsnya secara otomatis.
+  situsnya secara otomatis. Panduan kolomnya ada di
+  [`data/master/README.md`](../data/master/README.md).
 - **Lewat basis data** — masukkan data ke Supabase (lihat
   [`03-PANDUAN-DEPLOY.md`](03-PANDUAN-DEPLOY.md)). Begitu variabel lingkungan
   Supabase terpasang, dashboard web membaca langsung dari basis data dan berkas
