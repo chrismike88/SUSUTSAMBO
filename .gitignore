@@ -31,3 +31,8 @@ venv/
 Thumbs.db
 *.log
 ~$*.xlsx
+
+# Berkas kerja sekali pakai
+lihat.mjs
+shot*.mjs
+diag.mjs
