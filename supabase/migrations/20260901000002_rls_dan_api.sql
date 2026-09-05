@@ -7,7 +7,29 @@
 -- A. HAK AKSES SCHEMA
 -- ---------------------------------------------------------------------------
 grant usage on schema susut to anon, authenticated, service_role;
+
+-- Pengunjung tanpa login: baca saja.
 grant select on all tables in schema susut to anon, authenticated;
+
+-- Log audit memuat isi baris sebelum dan sesudah perubahan, termasuk siapa
+-- yang mengubahnya. Row Level Security sudah menyembunyikannya dari anon,
+-- tetapi haknya dicabut juga agar satu kebijakan yang keliru di kemudian hari
+-- tidak sampai membocorkannya.
+revoke select on susut.audit_log from anon;
+
+-- Pengguna yang sudah login juga memerlukan hak tulis di TINGKAT TABEL.
+-- SIAPA yang benar-benar boleh menulis tetap ditentukan Row Level Security
+-- pada bagian E di bawah. Tanpa grant ini, PostgreSQL menolak lebih dulu di
+-- lapisan hak akses tabel sehingga seluruh kebijakan tulis tidak akan pernah
+-- dievaluasi — pengisian realisasi bulanan pun mustahil dilakukan.
+-- Tabel audit_log sengaja TIDAK diberi hak tulis: isinya hanya boleh
+-- ditambah oleh pemicu susut.tulis_audit() yang berjalan sebagai pemilik.
+grant insert, update, delete on
+  susut.unit, susut.parameter, susut.penyulang, susut.program,
+  susut.neraca_energi, susut.program_periode, susut.susut_penyulang,
+  susut.rugi_teknis, susut.p2tl, susut.action_plan, susut.profil
+to authenticated;
+
 grant all    on all tables in schema susut to service_role;
 grant execute on all functions in schema susut to anon, authenticated, service_role;
 

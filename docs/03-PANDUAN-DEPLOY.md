@@ -97,6 +97,33 @@ publik harus dicabut lebih dulu.** Caranya: pada
 `20260901000002_rls_dan_api.sql` bagian D, ganti `to anon, authenticated`
 menjadi `to authenticated`, lalu jalankan ulang berkas itu.
 
+Model ini punya dua lapis yang harus benar bersamaan:
+
+1. **Hak akses tabel** — menentukan apakah sebuah peran boleh menulis sama
+   sekali. `anon` hanya diberi `select`; `authenticated` juga diberi
+   `insert`/`update`/`delete`.
+2. **Row Level Security** — menentukan siapa di antara pengguna yang sudah
+   login yang benar-benar boleh menulis, berdasarkan kolom `peran` pada
+   `susut.profil`.
+
+Kalau lapisan pertama lupa diberikan, seluruh kebijakan RLS tidak akan pernah
+dievaluasi dan pengisian realisasi bulanan menjadi mustahil — PostgreSQL
+menolak lebih dulu. Karena itu perilakunya diuji otomatis:
+
+```bash
+bash scripts/uji_rls.sh                        # PostgreSQL sementara
+PGURL=postgres://... bash scripts/uji_rls.sh   # basis data yang sudah ada
+```
+
+Uji ini membuktikan pengunjung tanpa login hanya bisa membaca, PENGAMAT tidak
+bisa menulis apa pun, PELAKSANA bisa mengisi realisasi tetapi tidak bisa
+menyentuh data master, PELAKSANA tidak bisa menaikkan perannya sendiri, ADMIN
+bisa mengelola data master, dan log audit tidak terbaca di bawah peran MANAJER.
+Ia juga berjalan otomatis di CI setiap kali ada perubahan.
+
+Setelah proyek Supabase disiapkan, jalankan sekali terhadap basis data
+sungguhan memakai `PGURL` — tiruan lokal tidak sama persis dengan Supabase.
+
 Menaikkan peran seseorang setelah ia mendaftar:
 
 ```sql

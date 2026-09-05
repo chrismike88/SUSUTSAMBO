@@ -50,3 +50,12 @@ jobs:
           name: dashboard-excel
           path: dist/*.xlsx
           if-no-files-found: error
+
+  keamanan:
+    name: Uji Row Level Security
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Jalankan uji Row Level Security
+        run: bash scripts/uji_rls.sh

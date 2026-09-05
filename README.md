@@ -107,7 +107,9 @@ seluruh grafik ikut berubah dengan sendirinya.
 │   ├── build_excel.py    → dashboard Excel
 │   ├── build_docs.py     → dokumen work plan
 │   └── build_all.py      Menjalankan semuanya berurutan
-├── supabase/migrations/  Skema, view, RLS, dan seed
+├── supabase/
+│   ├── migrations/       Skema, view, RLS, dan seed
+│   └── tests/            Uji Row Level Security
 ├── docs/                 Analisis dan panduan
 ├── data/*.json           Dataset hasil generate
 └── dist/                 Dashboard Excel hasil generate
