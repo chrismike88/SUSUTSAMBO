@@ -23,7 +23,7 @@ atas tiga keluaran yang dibangun dari **satu sumber data yang sama**:
 ```bash
 # 1. Pasang dependensi
 npm install
-pip install openpyxl xlsxwriter
+pip install -r requirements.txt
 
 # 2. Isi data di data/master/*.csv  (bisa dibuka dengan Excel)
 python3 scripts/validate_master.py   # periksa konsistensinya

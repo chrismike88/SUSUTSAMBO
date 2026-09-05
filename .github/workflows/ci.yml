@@ -25,7 +25,7 @@ jobs:
       - name: Pasang dependensi
         run: |
           npm ci
-          python -m pip install --quiet openpyxl xlsxwriter
+          python -m pip install --quiet -r requirements.txt
 
       - name: Periksa konsistensi data master
         run: python scripts/validate_master.py
