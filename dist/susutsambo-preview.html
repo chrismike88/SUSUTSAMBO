@@ -1,0 +1,680 @@
+<title>SUSUTSAMBO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* ── Token: terang di :root, gelap diulang pada dua cakupan ───────────── */
+:root{
+  --ground:#EDF2F3; --surface:#FFFFFF; --surface-2:#F5F8F9; --sunk:#E4EBED;
+  --ink:#0C1E24; --ink-2:#42606A; --ink-3:#6E8A93;
+  --line:#D5E0E3; --line-2:#BECDD1;
+  --petrol:#0B3B45; --petrol-2:#12525E; --on-petrol:#EAF3F4;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a;
+  --grid:#DEE7E9; --axis:#BECDD1;
+  --ok:#0ca30c; --warn:#fab219; --late:#ec835a; --bad:#d03b3b;
+  --ok-w:#E4F5E4; --warn-w:#FDF3DC; --late-w:#FBE9E1; --bad-w:#F9E3E2;
+  --seq1:#cde2fb; --seq2:#9ec5f4; --seq3:#6da7ec; --seq4:#3987e5; --seq5:#256abf; --seq6:#104281;
+  --sh:0 1px 2px rgba(11,59,69,.05),0 10px 26px -20px rgba(11,59,69,.4);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#061418; --surface:#0D262D; --surface-2:#123039; --sunk:#0A1F25;
+  --ink:#E7F1F3; --ink-2:#A6C0C7; --ink-3:#7A99A2;
+  --line:#1B3A43; --line-2:#28535E;
+  --petrol:#071F25; --petrol-2:#0F4A55; --on-petrol:#DCEDEF;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --grid:#17333B; --axis:#28535E;
+  --ok-w:#0C2A18; --warn-w:#2E2508; --late-w:#2E1810; --bad-w:#2E1213;
+  --seq1:#104281; --seq2:#184f95; --seq3:#256abf; --seq4:#3987e5; --seq5:#6da7ec; --seq6:#9ec5f4;
+  --sh:0 1px 2px rgba(0,0,0,.35),0 10px 26px -20px rgba(0,0,0,.8);
+}}
+:root[data-theme="dark"]{
+  --ground:#061418; --surface:#0D262D; --surface-2:#123039; --sunk:#0A1F25;
+  --ink:#E7F1F3; --ink-2:#A6C0C7; --ink-3:#7A99A2;
+  --line:#1B3A43; --line-2:#28535E;
+  --petrol:#071F25; --petrol-2:#0F4A55; --on-petrol:#DCEDEF;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70;
+  --grid:#17333B; --axis:#28535E;
+  --ok-w:#0C2A18; --warn-w:#2E2508; --late-w:#2E1810; --bad-w:#2E1213;
+  --seq1:#104281; --seq2:#184f95; --seq3:#256abf; --seq4:#3987e5; --seq5:#6da7ec; --seq6:#9ec5f4;
+  --sh:0 1px 2px rgba(0,0,0,.35),0 10px 26px -20px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Archivo,"IBM Plex Sans",system-ui,sans-serif;
+  margin:0;text-wrap:balance;letter-spacing:-.01em}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--s1);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── Masthead ─────────────────────────────────────────────────────────── */
+.mast{background:var(--petrol);color:var(--on-petrol)}
+.mast-in{max-width:1280px;margin:0 auto;padding:14px 20px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.logo{display:flex;align-items:baseline;gap:9px;min-width:0}
+.logo b{font-family:Archivo;font-weight:700;font-size:19px;letter-spacing:.03em}
+.logo span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--on-petrol);opacity:.6}
+.mast dl{display:flex;gap:22px;margin:0 0 0 auto;flex-wrap:wrap}
+.mast dt{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;opacity:.55;
+  font-family:"IBM Plex Mono",monospace}
+.mast dd{margin:1px 0 0;font-size:12.5px;font-weight:500}
+.tema{background:none;border:1px solid rgba(255,255,255,.22);color:inherit;
+  border-radius:6px;padding:5px 10px;font:inherit;font-size:11.5px;cursor:pointer}
+.tema:hover{background:rgba(255,255,255,.1)}
+
+/* ── Wrapper ──────────────────────────────────────────────────────────── */
+.wrap{max-width:1280px;margin:0 auto;padding:18px 20px 56px}
+
+/* ── Strip putusan ────────────────────────────────────────────────────── */
+.verdict{display:flex;gap:14px;align-items:flex-start;padding:13px 16px;border-radius:10px;
+  border:1px solid var(--line);background:var(--surface);box-shadow:var(--sh);
+  border-left:5px solid var(--warn)}
+.verdict .tag{flex:none;font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:5px;
+  background:var(--warn-w);color:#8A5A00;white-space:nowrap}
+:root[data-theme="dark"] .verdict .tag,
+:root:not([data-theme="light"]) .verdict .tag{color:var(--warn)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .verdict .tag{color:#8A5A00}}
+.verdict p{margin:0;font-size:13.5px}
+.verdict strong{font-weight:600}
+
+/* ── Rel KPI ──────────────────────────────────────────────────────────── */
+.rail{display:grid;grid-template-columns:repeat(auto-fit,minmax(198px,1fr));gap:12px;margin:14px 0}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:13px 15px 14px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:2px}
+.tile .lab{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:500;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.tile .val{font-family:Archivo;font-weight:700;font-size:31px;line-height:1.08;letter-spacing:-.02em}
+.tile .val em{font-style:normal;font-size:15px;font-weight:600;color:var(--ink-2);margin-left:3px}
+.tile .sub{font-size:11.5px;color:var(--ink-2);line-height:1.4}
+
+/* ── Tab ──────────────────────────────────────────────────────────────── */
+.tabs{display:flex;gap:2px;overflow-x:auto;margin:20px 0 0;
+  border-bottom:1px solid var(--line);padding-bottom:0}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;
+  padding:9px 13px;font:inherit;font-size:13px;font-weight:500;color:var(--ink-3);
+  cursor:pointer;white-space:nowrap}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--s2);font-weight:600}
+.panel{padding-top:18px}
+.panel[hidden]{display:none!important}
+
+/* ── Kartu ────────────────────────────────────────────────────────────── */
+.grid{display:grid;gap:14px;align-items:start}
+.g2{grid-template-columns:1fr}
+@media(min-width:900px){.g2{grid-template-columns:1.55fr 1fr}.g2.even{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  padding:15px 16px 16px;box-shadow:var(--sh);min-width:0}
+.card>header{margin-bottom:12px}
+.card h2{font-size:14.5px;font-weight:600}
+.card .hint{margin:3px 0 0;font-size:11.5px;color:var(--ink-3);line-height:1.45}
+
+/* ── Baris berstrip status ────────────────────────────────────────────── */
+.rows{display:flex;flex-direction:column;gap:5px}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:center;
+  padding:8px 10px 8px 0;border-radius:7px;background:var(--surface-2);
+  border-left:4px solid var(--line-2)}
+.row.ok{border-left-color:var(--ok)} .row.warn{border-left-color:var(--warn)}
+.row.late{border-left-color:var(--late)} .row.bad{border-left-color:var(--bad)}
+.row .kode{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  color:var(--ink-2);padding-left:10px;white-space:nowrap}
+.row .nm{font-size:12.5px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .met{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.bar{width:74px;height:5px;border-radius:3px;background:var(--sunk);overflow:hidden;flex:none}
+.bar i{display:block;height:100%;border-radius:3px}
+.pct{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;
+  width:52px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* ── Lencana ──────────────────────────────────────────────────────────── */
+.chip{display:inline-flex;align-items:center;gap:4px;padding:2px 7px;border-radius:99px;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.06em;
+  white-space:nowrap}
+.chip.ok{background:var(--ok-w);color:var(--ok)} .chip.warn{background:var(--warn-w);color:#8A5A00}
+.chip.late{background:var(--late-w);color:#9A431C} .chip.bad{background:var(--bad-w);color:var(--bad)}
+:root[data-theme="dark"] .chip.warn,:root[data-theme="dark"] .chip.late{color:var(--warn)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip.warn{color:var(--warn)}
+  :root:not([data-theme="light"]) .chip.late{color:var(--late)}}
+
+/* ── Tabel ────────────────────────────────────────────────────────────── */
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px}
+th{background:var(--surface-2);color:var(--ink-2);font-weight:600;text-align:left;
+  padding:8px 10px;border-bottom:1px solid var(--line-2);white-space:nowrap;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--surface-2)}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+.heat{display:inline-block;padding:2px 7px;border-radius:5px;font-weight:600;
+  font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;font-size:11.5px}
+
+/* ── Grafik ───────────────────────────────────────────────────────────── */
+.chart{width:100%;height:auto;display:block;overflow:visible}
+.chart .gridline{stroke:var(--grid);stroke-width:1}
+.chart .axis{stroke:var(--axis);stroke-width:1}
+.chart text{font-family:"IBM Plex Mono",monospace;font-size:9.5px;fill:var(--ink-3)}
+.chart text.emph{fill:var(--ink-2);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:5px 15px;margin-top:9px;font-size:11.5px;color:var(--ink-2)}
+.legend i{width:11px;height:3px;border-radius:2px;display:inline-block;margin-right:5px;
+  vertical-align:middle}
+.legend i.dash{background:repeating-linear-gradient(90deg,var(--ink-3) 0 4px,transparent 4px 7px)}
+
+/* ── Aksi ─────────────────────────────────────────────────────────────── */
+.aksi{display:flex;flex-direction:column;gap:10px}
+.act{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 15px;
+  box-shadow:var(--sh);border-left:5px solid var(--line-2)}
+.act.p1{border-left-color:var(--bad)} .act.p2{border-left-color:var(--late)}
+.act.p3{border-left-color:var(--warn)} .act.p4{border-left-color:var(--ink-3)}
+.act .hd{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:6px}
+.act h3{font-size:13.5px;font-weight:600;line-height:1.4}
+.act .why{margin:5px 0 0;font-size:12px;color:var(--ink-2)}
+.act .why b{color:var(--ink);font-weight:600}
+.act dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:9px;
+  margin:11px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+.act dt{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+.act dd{margin:2px 0 0;font-size:12.5px;font-weight:600;font-variant-numeric:tabular-nums}
+
+/* ── Simulator ────────────────────────────────────────────────────────── */
+.sim{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:900px){.sim{grid-template-columns:320px 1fr}}
+.slider{margin-bottom:17px}
+.slider .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.slider label{font-size:12.5px;font-weight:500}
+.slider output{font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;color:var(--s1)}
+.slider input{width:100%;margin:7px 0 0;accent-color:var(--s1);height:4px}
+.slider .h{font-size:11px;color:var(--ink-3);margin-top:4px;line-height:1.4}
+.sc{border:1px solid var(--line);border-radius:10px;padding:14px 15px;background:var(--surface);
+  box-shadow:var(--sh);border-left:5px solid var(--line-2)}
+.sc.pass{border-left-color:var(--ok)} .sc.fail{border-left-color:var(--bad)}
+.sc .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
+.sc h3{font-size:13px;font-weight:600}
+.sc .big{font-family:Archivo;font-weight:700;font-size:30px;line-height:1.1;margin:6px 0 2px}
+.sc .cap{font-size:11.5px;color:var(--ink-3)}
+.sc dl{display:grid;grid-template-columns:1fr auto;gap:3px 12px;margin:11px 0 0;padding-top:10px;
+  border-top:1px solid var(--line);font-size:11.5px}
+.sc dt{color:var(--ink-3)} .sc dd{margin:0;text-align:right;font-weight:600;
+  font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace}
+.sc p.note{margin:10px 0 0;font-size:11.5px;color:var(--ink-2);line-height:1.5}
+
+.foot{margin-top:22px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface-2);font-size:11.5px;color:var(--ink-2);line-height:1.55}
+.foot b{color:var(--ink)}
+</style>
+
+<header class="mast">
+  <div class="mast-in">
+    <div class="logo"><b>SUSUTSAMBO</b><span>Monitoring Susut Energi</span></div>
+    <dl id="mastMeta"></dl>
+    <button class="tema" id="tema" type="button">Ganti tema</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="verdict" id="verdict"></div>
+  <div class="rail" id="rail"></div>
+
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <section class="panel" id="p-ringkas" role="tabpanel"></section>
+  <section class="panel" id="p-plan" role="tabpanel" hidden></section>
+  <section class="panel" id="p-teknis" role="tabpanel" hidden></section>
+  <section class="panel" id="p-nonteknis" role="tabpanel" hidden></section>
+  <section class="panel" id="p-aksi" role="tabpanel" hidden></section>
+  <section class="panel" id="p-simulasi" role="tabpanel" hidden></section>
+
+  <p class="foot" id="foot"></p>
+</div>
+
+<script id="data" type="application/json">{"unit":{"kode":"ULP-SBJ","nama":"ULP Samboja","up3":"UP3 Balikpapan","uid":"UID Kalimantan Timur & Kalimantan Utara","manager":"Manager Layanan ULP Samboja","tahun":2026},"par":{"tarif_rata_rata":1462.5,"target_susut_akhir_tahun":5.85,"baseline_susut_2025":7.12,"floor_susut_teknis":3.3,"ambang_tercapai":100.0,"ambang_waspada":90.0,"ambang_terlambat":75.0,"jumlah_pelanggan":61482.0,"jumlah_gardu":574.0,"jumlah_penyulang":10.0,"panjang_jtm_kms":612.4,"panjang_jtr_kms":848.9},"catatan":"Data pada berkas ini adalah CONTOH untuk keperluan pembangunan dashboard. Ganti dengan data riil dari AP2T, XPower, Aplikasi P2TL, dan SCADA/AMR.","kpi":{"periode_data":"Agustus 2026","bulan_realisasi":8,"bulan_tersisa":4,"susut_bulan_ini_persen":6.03,"target_bulan_ini_persen":5.95,"deviasi_bulan_ini":0.08,"susut_ytd_persen":6.545,"target_ytd_persen":6.382,"target_akhir_tahun_persen":5.85,"baseline_tahun_lalu_persen":7.12,"perbaikan_vs_baseline":0.575,"kwh_salur_ytd":164676505,"kwh_jual_ytd":153899138,"kwh_susut_ytd":10777367,"rupiah_susut_ytd":15761899238,"susut_teknis_persen":3.5095,"susut_nonteknis_persen":2.5205,"skenario_a_kumulatif":{"label":"Target 5,85% sebagai SUSUT KUMULATIF (YTD) akhir tahun","kwh_susut_maks_setahun":14782596,"kwh_susut_sisa_diizinkan":4005229,"susut_sisa_diizinkan_persen":4.55,"gap_kwh_harus_diselamatkan":1302223,"gap_kwh_per_bulan":325556,"gap_rupiah":1904500917,"tingkat_kesulitan":"SANGAT BERAT"},"skenario_b_exit_rate":{"label":"Target 5,85% sebagai SUSUT BULAN DESEMBER (exit rate)","kwh_susut_maks_desember":1315098,"penurunan_pp_dibutuhkan":0.18,"gap_kwh_harus_diselamatkan":40465,"gap_kwh_per_bulan":10116,"gap_rupiah":59179416,"tingkat_kesulitan":"MODERAT"},"kwh_selamat_ytd":1959808,"kwh_selamat_target_tahun":3886510,"kwh_selamat_sisa":1926702,"kwh_selamat_sisa_per_bulan":481676,"rupiah_selamat_ytd":2866219200,"rupiah_selamat_sisa":2817801675,"kontribusi_teknis":{"kwh_target_tahun":1099470,"kwh_ytd":481827,"kwh_sisa":617643,"capaian_persen":71.2},"kontribusi_nonteknis":{"kwh_target_tahun":2787040,"kwh_ytd":1477981,"kwh_sisa":1309059,"capaian_persen":78.25},"capaian_program_rata_rata":75.05,"jumlah_program":22,"jumlah_tercapai":2,"jumlah_waspada":4,"jumlah_terlambat":5,"jumlah_kritis":11,"program_kritis":["T-02","T-03","T-05","T-06","T-08","T-10","N-03","N-05","N-07","N-09","N-12"],"status_keseluruhan":"PERLU AKSELERASI"},"neraca":[{"b":"Jan","s":"R","sp":7.27,"tp":6.9,"yt":7.27,"sl":19845320,"su":1442755},{"b":"Feb","s":"R","sp":7.05,"tp":6.75,"yt":7.1626,"sl":18932410,"su":1334735},{"b":"Mar","s":"R","sp":6.9,"tp":6.6,"yt":7.0729,"sl":20114780,"su":1387920},{"b":"Apr","s":"R","sp":6.65,"tp":6.45,"yt":6.9635,"sl":20556905,"su":1367034},{"b":"Mei","s":"R","sp":6.39,"tp":6.3,"yt":6.8427,"sl":21203640,"su":1354913},{"b":"Jun","s":"R","sp":6.14,"tp":6.15,"yt":6.722,"sl":20874115,"su":1281671},{"b":"Jul","s":"R","sp":6.06,"tp":6.05,"yt":6.6227,"sl":21446980,"su":1299687},{"b":"Ags","s":"R","sp":6.03,"tp":5.95,"yt":6.5446,"sl":21702355,"su":1308652},{"b":"Sep","s":"P","sp":5.92,"tp":5.92,"yt":null,"sl":21540900,"su":1275221},{"b":"Okt","s":"P","sp":5.9,"tp":5.9,"yt":null,"sl":21890450,"su":1291537},{"b":"Nov","s":"P","sp":5.87,"tp":5.87,"yt":null,"sl":22105780,"su":1297609},{"b":"Des","s":"P","sp":5.85,"tp":5.85,"yt":null,"sl":22480310,"su":1315098}],"prog":[{"k":"T-01","n":"Penyeimbangan beban trafo distribusi (balancing)","kat":"TEKNIS","sub":"Trafo","sat":"gardu","tt":180.0,"ty":120.0,"ry":127.21,"cp":106.01,"st":52.79,"kb":13.2,"fk":0.83,"sk":50150,"s":"TERCAPAI","pic":"Supervisor Teknik"},{"k":"T-02","n":"Penggantian konduktor JTR usang ke twisted cable","kat":"TEKNIS","sub":"JTR","sat":"kms","tt":24.5,"ty":13.25,"ry":9.41,"cp":71.02,"st":15.09,"kb":3.77,"fk":3.21,"sk":93558,"s":"KRITIS","pic":"Supervisor Teknik"},{"k":"T-03","n":"Pemasangan trafo sisip / uprating trafo overload","kat":"TEKNIS","sub":"Trafo","sat":"unit","tt":12.0,"ty":6.48,"ry":3.75,"cp":57.87,"st":8.25,"kb":2.06,"fk":4.4,"sk":94875,"s":"KRITIS","pic":"Supervisor Teknik"},{"k":"T-04","n":"Penggantian SR > 30 m & kabel SR usang","kat":"TEKNIS","sub":"SR/APP","sat":"pelanggan","tt":1450.0,"ty":966.64,"ry":802.34,"cp":83.0,"st":647.66,"kb":161.91,"fk":1.61,"sk":40155,"s":"TERLAMBAT","pic":"Supervisor Teknik"},{"k":"T-05","n":"Rekonfigurasi / pemecahan beban penyulang","kat":"TEKNIS","sub":"JTM","sat":"penyulang","tt":6.0,"ty":3.36,"ry":1.69,"cp":50.3,"st":4.31,"kb":1.08,"fk":5.1,"sk":90510,"s":"KRITIS","pic":"Supervisor Teknik"},{"k":"T-06","n":"Pemasangan kapasitor bank (perbaikan cos phi)","kat":"TEKNIS","sub":"JTM","sat":"unit","tt":8.0,"ty":4.48,"ry":1.98,"cp":44.2,"st":6.02,"kb":1.5,"fk":6.08,"sk":83076,"s":"KRITIS","pic":"Supervisor Teknik"},{"k":"T-07","n":"Penggantian konektor & retensioning sambungan","kat":"TEKNIS","sub":"Konektor","sat":"titik","tt":620.0,"ty":413.36,"ry":392.67,"cp":94.99,"st":227.33,"kb":56.83,"fk":1.16,"sk":32963,"s":"WASPADA","pic":"Supervisor Teknik"},{"k":"T-08","n":"Pemasangan alat ukur (AMR) sisi gardu distribusi","kat":"TEKNIS","sub":"Trafo","sat":"unit","tt":45.0,"ty":24.3,"ry":16.28,"cp":67.0,"st":28.72,"kb":7.18,"fk":3.53,"sk":38772,"s":"KRITIS","pic":"Supervisor Teknik"},{"k":"T-09","n":"Pemeliharaan preventif & perbaikan grounding gardu","kat":"TEKNIS","sub":"Trafo","sat":"gardu","tt":240.0,"ty":160.0,"ry":163.2,"cp":102.0,"st":76.8,"kb":19.2,"fk":0.94,"sk":23808,"s":"TERCAPAI","pic":"Supervisor Teknik"},{"k":"T-10","n":"Uprating konduktor JTM (AAAC 150 mm2)","kat":"TEKNIS","sub":"JTM","sat":"kms","tt":9.8,"ty":5.5,"ry":1.96,"cp":35.64,"st":7.84,"kb":1.96,"fk":8.0,"sk":69776,"s":"KRITIS","pic":"Supervisor Teknik"},{"k":"N-01","n":"P2TL - pencapaian Target Operasi (TO)","kat":"NON_TEKNIS","sub":"P2TL","sat":"pelanggan","tt":3600.0,"ty":2400.0,"ry":2207.98,"cp":92.0,"st":1392.02,"kb":348.0,"fk":1.26,"sk":0,"s":"WASPADA","pic":"Supervisor Transaksi Energi"},{"k":"N-02","n":"P2TL - perolehan kWh temuan pelanggaran","kat":"NON_TEKNIS","sub":"P2TL","sat":"kWh","tt":1150000.0,"ty":766666.64,"ry":674666.67,"cp":88.0,"st":475333.33,"kb":118833.33,"fk":1.41,"sk":475333,"s":"TERLAMBAT","pic":"Supervisor Transaksi Energi"},{"k":"N-03","n":"P2TL - realisasi penagihan tagihan susulan","kat":"NON_TEKNIS","sub":"P2TL","sat":"Rp juta","tt":3400.0,"ty":2266.64,"ry":1677.32,"cp":74.0,"st":1722.68,"kb":430.67,"fk":2.05,"sk":0,"s":"KRITIS","pic":"Supervisor Transaksi Energi"},{"k":"N-04","n":"Penggantian kWh meter rusak / macet / buram","kat":"NON_TEKNIS","sub":"APP","sat":"unit","tt":2750.0,"ty":1833.36,"ry":1576.67,"cp":86.0,"st":1173.33,"kb":293.33,"fk":1.49,"sk":112640,"s":"TERLAMBAT","pic":"Supervisor Transaksi Energi"},{"k":"N-05","n":"Penggantian kWh meter tua (> 15 tahun)","kat":"NON_TEKNIS","sub":"APP","sat":"unit","tt":1900.0,"ty":1026.0,"ry":646.37,"cp":63.0,"st":1253.63,"kb":313.41,"fk":3.88,"sk":89008,"s":"KRITIS","pic":"Supervisor Transaksi Energi"},{"k":"N-06","n":"Pemasangan / normalisasi AMR pelanggan >= 41,5 kVA","kat":"NON_TEKNIS","sub":"AMR","sat":"pelanggan","tt":168.0,"ty":112.0,"ry":88.48,"cp":79.0,"st":79.52,"kb":19.88,"fk":1.8,"sk":117690,"s":"TERLAMBAT","pic":"Supervisor Transaksi Energi"},{"k":"N-07","n":"Pemeriksaan APP pelanggan potensial (>= 3.500 VA)","kat":"NON_TEKNIS","sub":"APP","sat":"pelanggan","tt":2400.0,"ty":1600.0,"ry":1104.01,"cp":69.0,"st":1295.99,"kb":324.0,"fk":2.35,"sk":75167,"s":"KRITIS","pic":"Supervisor Transaksi Energi"},{"k":"N-08","n":"Penurunan DLPD (Daftar Langganan Perlu Diperhatikan)","kat":"NON_TEKNIS","sub":"Baca Meter","sat":"rekening","tt":4200.0,"ty":2800.0,"ry":2268.01,"cp":81.0,"st":1931.99,"kb":483.0,"fk":1.7,"sk":85008,"s":"TERLAMBAT","pic":"Supervisor Pelayanan Pelanggan"},{"k":"N-09","n":"Penertiban & pemeteran PJU ilegal","kat":"NON_TEKNIS","sub":"PJU","sat":"titik","tt":320.0,"ty":172.8,"ry":95.03,"cp":54.99,"st":224.97,"kb":56.24,"fk":4.73,"sk":143981,"s":"KRITIS","pic":"Supervisor Transaksi Energi"},{"k":"N-10","n":"Validasi faktor kali & Data Induk Langganan (DIL)","kat":"NON_TEKNIS","sub":"Administrasi","sat":"pelanggan","tt":1100.0,"ty":733.36,"ry":689.34,"cp":94.0,"st":410.66,"kb":102.66,"fk":1.19,"sk":48458,"s":"WASPADA","pic":"Supervisor Pelayanan Pelanggan"},{"k":"N-11","n":"Peningkatan akurasi baca meter (foto stand / RBM)","kat":"NON_TEKNIS","sub":"Baca Meter","sat":"rekening","tt":12000.0,"ty":8000.0,"ry":7760.01,"cp":97.0,"st":4239.99,"kb":1060.0,"fk":1.09,"sk":50880,"s":"WASPADA","pic":"Supervisor Pelayanan Pelanggan"},{"k":"N-12","n":"Penormalan sambungan langsung / sambungan liar","kat":"NON_TEKNIS","sub":"P2TL","sat":"titik","tt":210.0,"ty":140.0,"ry":85.4,"cp":61.0,"st":124.6,"kb":31.15,"fk":2.92,"sk":110894,"s":"KRITIS","pic":"Supervisor Transaksi Energi"}],"peny":[{"k":"SBJ-01","n":"Kuala Samboja","sp":7.94,"ub":21.4,"cp":0.86,"dv":6.8,"sr":412,"gd":78,"pl":8940,"jtr":96.4,"kw":250563,"ix":88.8,"kls":"KRITIS"},{"k":"SBJ-02","n":"Sungai Merdeka","sp":7.41,"ub":18.9,"cp":0.88,"dv":7.4,"sr":388,"gd":71,"pl":8120,"jtr":103.7,"kw":212390,"ix":81.5,"kls":"KRITIS"},{"k":"SBJ-03","n":"Handil Baru","sp":6.88,"ub":16.2,"cp":0.89,"dv":5.9,"sr":301,"gd":64,"pl":7365,"jtr":88.2,"kw":178863,"ix":71.7,"kls":"KRITIS"},{"k":"SBJ-04","n":"Argosari","sp":6.42,"ub":14.8,"cp":0.9,"dv":6.2,"sr":254,"gd":55,"pl":6042,"jtr":81.5,"kw":136922,"ix":66.9,"kls":"TINGGI"},{"k":"SBJ-05","n":"Bukit Raya","sp":5.97,"ub":13.1,"cp":0.91,"dv":5.1,"sr":226,"gd":61,"pl":6580,"jtr":79.8,"kw":138663,"ix":59.2,"kls":"TINGGI"},{"k":"SBJ-06","n":"Karya Merdeka","sp":5.63,"ub":12.4,"cp":0.92,"dv":5.6,"sr":198,"gd":49,"pl":5318,"jtr":76.3,"kw":105686,"ix":56.0,"kls":"TINGGI"},{"k":"SBJ-07","n":"Amborawang","sp":5.35,"ub":11.7,"cp":0.92,"dv":4.8,"sr":175,"gd":52,"pl":5704,"jtr":74.9,"kw":107719,"ix":52.4,"kls":"SEDANG"},{"k":"SBJ-08","n":"Tani Bhakti","sp":5.11,"ub":10.9,"cp":0.93,"dv":6.5,"sr":163,"gd":44,"pl":4836,"jtr":92.1,"kw":87230,"ix":52.0,"kls":"SEDANG"},{"k":"SBJ-09","n":"Beringin Agung","sp":4.86,"ub":9.8,"cp":0.93,"dv":4.4,"sr":141,"gd":51,"pl":5412,"jtr":81.6,"kw":92844,"ix":45.7,"kls":"SEDANG"},{"k":"SBJ-10","n":"Sungai Seluang","sp":4.52,"ub":8.6,"cp":0.94,"dv":4.1,"sr":118,"gd":49,"pl":3165,"jtr":74.4,"kw":50498,"ix":40.6,"kls":"RENDAH"}],"rugi":[{"k":"jaringan_tegangan_rendah","v":255517},{"k":"trafo_distribusi","v":218556},{"k":"sambungan_rumah_app","v":175011},{"k":"jaringan_tegangan_menengah","v":116471},{"k":"konektor_sambungan","v":33276}],"p2tl":[{"b":"Jan","pr":300,"tm":26,"kwh":76379,"tg":235580000,"by":152161122},{"b":"Feb","pr":243,"tm":22,"kwh":94232,"tg":212620000,"by":142604234},{"b":"Mar","pr":284,"tm":27,"kwh":83457,"tg":203350000,"by":144337830},{"b":"Apr","pr":257,"tm":26,"kwh":78046,"tg":202880000,"by":147169152},{"b":"Mei","pr":270,"tm":27,"kwh":80713,"tg":208250000,"by":162226749},{"b":"Jun","pr":248,"tm":26,"kwh":87633,"tg":187090000,"by":155995642},{"b":"Jul","pr":316,"tm":35,"kwh":83426,"tg":226660000,"by":179174730},{"b":"Ags","pr":290,"tm":33,"kwh":90781,"tg":200890000,"by":175778749}],"gol":[{"g":"P-I","ket":"Mempengaruhi batas daya","tm":68,"kwh":209146,"rp":519969200},{"g":"P-II","ket":"Mempengaruhi pengukuran energi","tm":97,"kwh":296854,"rp":738020800},{"g":"P-III","ket":"Mempengaruhi batas daya & pengukuran energi","tm":42,"kwh":128186,"rp":318690800},{"g":"P-IV","ket":"Bukan pelanggan (sambungan langsung)","tm":15,"kwh":40481,"rp":100639200}],"aksi":[{"no":1,"pr":"SANGAT TINGGI","kat":"NON_TEKNIS","pk":"N-09","a":"Sensus & pemeteran PJU ilegal di 4 kecamatan (Samboja, Samboja Barat, Muara Jawa, Loa Janan Ilir) — bentuk tim gabungan dengan Pemda/Dishub","am":"PJU tanpa meter & sambungan langsung ke JTR; kWh terpakai tidak tercatat","dk":35995,"ds":143981,"ts":"2026-11-30","pic":"Supervisor Transaksi Energi","s":"BERJALAN","pg":55.0},{"no":2,"pr":"SANGAT TINGGI","kat":"NON_TEKNIS","pk":"N-03","a":"Task force penagihan tagihan susulan P2TL: rekonsiliasi piutang, surat panggilan, opsi cicilan, pemutusan bagi yang menunggak > 30 hari","am":"Temuan P2TL tinggi tetapi realisasi tagih hanya 74% — kWh temuan tidak berkonversi jadi pendapatan","dk":0,"ds":0,"ts":"2026-12-15","pic":"Supervisor Transaksi Energi","s":"BERJALAN","pg":48.0},{"no":3,"pr":"SANGAT TINGGI","kat":"TEKNIS","pk":"T-10","a":"Percepatan uprating konduktor JTM penyulang SBJ-02 Sungai Merdeka & SBJ-01 Kuala Samboja (segmen ujung, drop tegangan > 7%)","am":"Penyulang terpanjang dengan drop tegangan 6,8–7,4% dan penampang konduktor tidak memadai","dk":17444,"ds":69776,"ts":"2026-12-20","pic":"Supervisor Teknik","s":"TERLAMBAT","pg":36.0},{"no":4,"pr":"TINGGI","kat":"TEKNIS","pk":"T-06","a":"Pemasangan 5 unit kapasitor bank sisa pada penyulang cos phi < 0,90 (SBJ-01, SBJ-02, SBJ-03)","am":"Cos phi 0,86–0,89 menaikkan arus dan rugi I²R pada JTM/trafo","dk":20769,"ds":83076,"ts":"2026-11-30","pic":"Supervisor Teknik","s":"BERJALAN","pg":44.0},{"no":5,"pr":"TINGGI","kat":"TEKNIS","pk":"T-05","a":"Rekonfigurasi & pemecahan beban 3 penyulang tersisa; manuver beban ke SBJ-09 & SBJ-10 yang masih ringan","am":"Ketimpangan beban antar penyulang; SBJ-01/02 padat, SBJ-09/10 ringan","dk":22628,"ds":90510,"ts":"2026-12-10","pic":"Supervisor Teknik","s":"BERJALAN","pg":50.0},{"no":6,"pr":"TINGGI","kat":"NON_TEKNIS","pk":"N-05","a":"Pengadaan & penggantian 700 unit kWh meter tua > 15 tahun (prioritas daya >= 2.200 VA)","am":"Meter tua cenderung lambat/under-register 2–5%","dk":22252,"ds":89008,"ts":"2026-12-15","pic":"Supervisor Transaksi Energi","s":"TERLAMBAT","pg":63.0},{"no":7,"pr":"TINGGI","kat":"NON_TEKNIS","pk":"N-12","a":"Operasi penertiban sambungan langsung di area padat Handil Baru & Kuala Samboja bersama aparat","am":"Permukiman padat & pendatang proyek IKN; sambungan liar dari JTR","dk":27724,"ds":110894,"ts":"2026-11-15","pic":"Supervisor Transaksi Energi","s":"BERJALAN","pg":61.0},{"no":8,"pr":"SEDANG","kat":"NON_TEKNIS","pk":"N-07","a":"Pemeriksaan APP 745 pelanggan potensial sisa; prioritaskan pelanggan dengan penurunan pemakaian > 30% YoY","am":"Anomali pemakaian belum dianalisis sistematis","dk":18792,"ds":75167,"ts":"2026-12-20","pic":"Supervisor Transaksi Energi","s":"BERJALAN","pg":69.0},{"no":9,"pr":"SEDANG","kat":"TEKNIS","pk":"T-03","a":"Pemasangan 5 trafo sisip pada gardu overload > 80% & JTR > 350 m","am":"JTR terlalu panjang dari gardu menyebabkan rugi I²R besar","dk":23719,"ds":94875,"ts":"2026-12-05","pic":"Supervisor Teknik","s":"BERJALAN","pg":58.0},{"no":10,"pr":"SEDANG","kat":"TEKNIS","pk":"T-02","a":"Penggantian 7,1 kms JTR usang (kawat telanjang) menjadi twisted cable","am":"JTR kawat telanjang rawan rugi & pencurian","dk":23390,"ds":93558,"ts":"2026-12-20","pic":"Supervisor Teknik","s":"BERJALAN","pg":71.0},{"no":11,"pr":"SEDANG","kat":"NON_TEKNIS","pk":"N-06","a":"Normalisasi 35 AMR pelanggan besar yang gagal baca / offline > 3 hari","am":"Sinyal modem lemah & meter error, pembacaan jadi estimasi","dk":29422,"ds":117690,"ts":"2026-10-31","pic":"Supervisor Transaksi Energi","s":"BERJALAN","pg":79.0},{"no":12,"pr":"RUTIN","kat":"TEKNIS","pk":"T-01","a":"Lanjutkan pengukuran & penyeimbangan beban trafo (unbalance > 15% wajib ditindak dalam 7 hari)","am":"Unbalance rata-rata unit 13,8%; SBJ-01 mencapai 21,4%","dk":12538,"ds":50150,"ts":"Rutin bulanan","pic":"Supervisor Teknik","s":"TERCAPAI","pg":106.0}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const nf = (a,b)=>new Intl.NumberFormat('id-ID',{minimumFractionDigits:a,maximumFractionDigits:b});
+const N  = (v,d=0)=> v==null||isNaN(v) ? '–' : nf(d,d).format(v);
+const P  = (v,d=2)=> v==null||isNaN(v) ? '–' : nf(d,d).format(v)+'%';
+const PP = (v,d=2)=> v==null ? '–' : (v>0?'+':v<0?'−':'')+nf(d,d).format(Math.abs(v))+' pp';
+function Rp(v){ const a=Math.abs(v);
+  if(a>=1e12) return 'Rp '+N(v/1e12,2)+' T'; if(a>=1e9) return 'Rp '+N(v/1e9,2)+' M';
+  if(a>=1e6) return 'Rp '+N(v/1e6,1)+' jt'; if(a>=1e3) return 'Rp '+N(v/1e3,0)+' rb';
+  return 'Rp '+N(v); }
+function KW(v){ const a=Math.abs(v);
+  if(a>=1e6) return N(v/1e6,2)+' juta'; if(a>=1e3) return N(v/1e3,1)+' ribu'; return N(v); }
+const K = D.kpi, A = K.skenario_a_kumulatif, B = K.skenario_b_exit_rate;
+const TARIF = D.par.tarif_rata_rata;
+const KLS = {TERCAPAI:'ok',WASPADA:'warn',TERLAMBAT:'late',KRITIS:'bad'};
+const KLS_P = {RENDAH:'ok',SEDANG:'warn',TINGGI:'late',KRITIS:'bad'};
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ── Masthead + putusan + KPI ─────────────────────────────────────────── */
+document.getElementById('mastMeta').innerHTML = [
+  ['Unit', D.unit.nama],['Induk', D.unit.up3],['Periode data', K.periode_data],
+  ['Target akhir tahun', P(K.target_akhir_tahun_persen)]
+].map(([t,d])=>`<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('');
+
+const cukup = K.kwh_selamat_sisa >= A.gap_kwh_harus_diselamatkan;
+const rasio = K.kwh_selamat_sisa / A.gap_kwh_harus_diselamatkan;
+document.getElementById('verdict').innerHTML =
+  `<span class="tag">${esc(K.status_keseluruhan)}</span>
+   <p>Target akhir tahun <strong>${cukup?'masih bisa dicapai':'tidak tercapai tanpa program baru'}</strong>.
+   Sisa potensi work plan <strong>${KW(K.kwh_selamat_sisa)} kWh</strong> berbanding gap
+   <strong>${KW(A.gap_kwh_harus_diselamatkan)} kWh</strong> — rasio <strong>${N(rasio,2)}×</strong>.
+   Syaratnya ${K.jumlah_kritis} item berstatus KRITIS dituntaskan penuh sampai Desember.</p>`;
+
+document.getElementById('rail').innerHTML = [
+  ['Susut kumulatif (YTD)', P(K.susut_ytd_persen), '', `Target YTD ${P(K.target_ytd_persen)} · deviasi ${PP(K.susut_ytd_persen-K.target_ytd_persen)}`,'var(--bad)'],
+  ['Susut bulan berjalan', P(K.susut_bulan_ini_persen), '', `Target ${P(K.target_bulan_ini_persen)} · deviasi ${PP(K.deviasi_bulan_ini)}`,'var(--warn)'],
+  ['Capaian work plan', P(K.capaian_program_rata_rata,1), '', `${K.jumlah_tercapai} tercapai · ${K.jumlah_waspada} waspada · ${K.jumlah_terlambat} terlambat · ${K.jumlah_kritis} kritis`,'var(--ink)'],
+  ['Gap 4 bulan tersisa', KW(A.gap_kwh_harus_diselamatkan), 'kWh', `${N(A.gap_kwh_per_bulan)} kWh/bulan · setara ${Rp(A.gap_rupiah)}`,'var(--bad)']
+].map(([l,v,u,s,c])=>`<div class="tile"><span class="lab">${esc(l)}</span>
+  <span class="val" style="color:${c}">${v}${u?`<em>${u}</em>`:''}</span>
+  <span class="sub">${esc(s)}</span></div>`).join('');
+
+document.getElementById('foot').innerHTML =
+  `<b>Tentang angka di halaman ini.</b> ${esc(D.catatan)} Tarif konversi Rp ${N(TARIF,2)}
+   per kWh. Susut = (kWh salur − kWh jual) ÷ kWh salur.`;
+
+/* ── Grafik garis: tren susut ─────────────────────────────────────────── */
+function chartTren(){
+  const W=660,H=248,L=42,R=14,T=14,Bo=26, iw=W-L-R, ih=H-T-Bo;
+  const d=D.neraca, vals=d.flatMap(n=>[n.sp,n.tp,n.yt]).filter(v=>v!=null).concat([K.target_akhir_tahun_persen]);
+  const lo=Math.floor((Math.min(...vals)-.3)*2)/2, hi=Math.ceil((Math.max(...vals)+.3)*2)/2;
+  const X=i=>L+iw*i/(d.length-1), Y=v=>T+ih-(v-lo)/(hi-lo)*ih;
+  let g='',tick='';
+  const steps=5;
+  for(let i=0;i<=steps;i++){ const v=lo+(hi-lo)*i/steps, y=Y(v);
+    g+=`<line class="gridline" x1="${L}" y1="${y.toFixed(1)}" x2="${W-R}" y2="${y.toFixed(1)}"/>`;
+    tick+=`<text x="${L-7}" y="${(y+3.3).toFixed(1)}" text-anchor="end">${N(v,1)}%</text>`; }
+  d.forEach((n,i)=>{ tick+=`<text x="${X(i).toFixed(1)}" y="${H-9}" text-anchor="middle"${n.s==='P'?' opacity=".55"':''}>${n.b}</text>`; });
+  const path=(key,filt)=>{ let p='',on=false;
+    d.forEach((n,i)=>{ const v=n[key]; if(v==null||(filt&&!filt(n))){on=false;return;}
+      p+=(on?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)+' '; on=true; }); return p.trim(); };
+  const dots=d.map((n,i)=>n.sp!=null&&n.s==='R'
+    ? `<circle cx="${X(i).toFixed(1)}" cy="${Y(n.sp).toFixed(1)}" r="3.1" fill="var(--s1)"/>`:'').join('');
+  const ty=Y(K.target_akhir_tahun_persen);
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img"
+      aria-label="Tren susut bulanan terhadap target, Januari sampai Desember">
+    ${g}<line class="axis" x1="${L}" y1="${T}" x2="${L}" y2="${T+ih}"/>
+    <line class="axis" x1="${L}" y1="${T+ih}" x2="${W-R}" y2="${T+ih}"/>
+    <line x1="${L}" y1="${ty.toFixed(1)}" x2="${W-R}" y2="${ty.toFixed(1)}"
+      stroke="var(--s3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text class="emph" x="${L+7}" y="${(ty-7).toFixed(1)}" text-anchor="start" fill="var(--s3)"
+      >Target akhir tahun ${P(K.target_akhir_tahun_persen)}</text>
+    <path d="${path('tp')}" fill="none" stroke="var(--ink-3)" stroke-width="1.4" stroke-dasharray="5 4"/>
+    <path d="${path('yt')}" fill="none" stroke="var(--s2)" stroke-width="2.1" stroke-linejoin="round"/>
+    <path d="${path('sp',n=>n.s==='R')}" fill="none" stroke="var(--s1)" stroke-width="2.1" stroke-linejoin="round"/>
+    ${dots}${tick}</svg>
+  <div class="legend"><span><i style="background:var(--s1)"></i>Susut bulanan (realisasi)</span>
+    <span><i style="background:var(--s2)"></i>Susut kumulatif (YTD)</span>
+    <span><i class="dash"></i>Target bulanan</span></div>`;
+}
+
+/* ── Grafik batang bulanan ────────────────────────────────────────────── */
+function chartKolom(rows,warna,fmtY,fmtV,label){
+  const W=560,H=210,L=52,R=10,T=12,Bo=26, iw=W-L-R, ih=H-T-Bo;
+  const max=Math.max(...rows.map(r=>r.v))*1.1;
+  const bw=iw/rows.length*0.56;
+  let g='',tick='',bars='';
+  for(let i=0;i<=4;i++){ const v=max*i/4, y=T+ih-ih*i/4;
+    g+=`<line class="gridline" x1="${L}" y1="${y.toFixed(1)}" x2="${W-R}" y2="${y.toFixed(1)}"/>`;
+    tick+=`<text x="${L-7}" y="${(y+3.3).toFixed(1)}" text-anchor="end">${fmtY(v)}</text>`; }
+  rows.forEach((r,i)=>{ const cx=L+iw*(i+.5)/rows.length, h=Math.max(1,r.v/max*ih);
+    bars+=`<rect x="${(cx-bw/2).toFixed(1)}" y="${(T+ih-h).toFixed(1)}" width="${bw.toFixed(1)}"
+      height="${h.toFixed(1)}" rx="3" fill="${warna}"><title>${esc(r.b)}: ${fmtV(r.v)}</title></rect>`;
+    tick+=`<text x="${cx.toFixed(1)}" y="${H-9}" text-anchor="middle">${esc(r.b)}</text>`; });
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}">
+    ${g}<line class="axis" x1="${L}" y1="${T+ih}" x2="${W-R}" y2="${T+ih}"/>${bars}${tick}</svg>`;
+}
+function chartGaris(rows,warna,label){
+  const W=560,H=210,L=46,R=12,T=12,Bo=26, iw=W-L-R, ih=H-T-Bo;
+  const X=i=>L+iw*(rows.length===1?.5:i/(rows.length-1)), Y=v=>T+ih-v/100*ih;
+  let g='',tick='';
+  for(let i=0;i<=4;i++){ const v=100*i/4, y=Y(v);
+    g+=`<line class="gridline" x1="${L}" y1="${y.toFixed(1)}" x2="${W-R}" y2="${y.toFixed(1)}"/>`;
+    tick+=`<text x="${L-7}" y="${(y+3.3).toFixed(1)}" text-anchor="end">${N(v)}%</text>`; }
+  let p='';
+  rows.forEach((r,i)=>{ p+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(r.v).toFixed(1)+' ';
+    tick+=`<text x="${X(i).toFixed(1)}" y="${H-9}" text-anchor="middle">${esc(r.b)}</text>`; });
+  const dots=rows.map((r,i)=>`<circle cx="${X(i).toFixed(1)}" cy="${Y(r.v).toFixed(1)}" r="3.1"
+    fill="${warna}"><title>${esc(r.b)}: ${P(r.v,1)}</title></circle>`).join('');
+  const last=rows[rows.length-1];
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}">
+    ${g}<line class="axis" x1="${L}" y1="${T+ih}" x2="${W-R}" y2="${T+ih}"/>
+    <path d="${p.trim()}" fill="none" stroke="${warna}" stroke-width="2.1" stroke-linejoin="round"/>
+    ${dots}<text class="emph" x="${X(rows.length-1).toFixed(1)}" y="${(Y(last.v)-9).toFixed(1)}"
+      text-anchor="end" fill="${warna}">${P(last.v,1)}</text>${tick}</svg>`;
+}
+
+/* ── Baris berperingkat ───────────────────────────────────────────────── */
+function rowsHTML(items){
+  return `<div class="rows">`+items.map(it=>`<div class="row ${it.cls}">
+    <span class="kode">${esc(it.kode)}</span>
+    <span class="nm" title="${esc(it.judul)}">${esc(it.judul)}</span>
+    <span class="met">${it.chip?`<span class="chip ${it.cls}">${esc(it.chip)}</span>`:''}
+      <span class="bar"><i style="width:${Math.min(100,it.pct).toFixed(1)}%;background:${it.warna}"></i></span>
+      <span class="pct">${it.nilai}</span></span></div>`).join('')+`</div>`;
+}
+const warnaStatus = s => ({ok:'var(--ok)',warn:'var(--warn)',late:'var(--late)',bad:'var(--bad)'}[s]);
+
+/* ── Tab 1 · Ringkasan ───────────────────────────────────────────────── */
+const topGap=[...D.prog].filter(p=>p.sk>0).sort((a,b)=>b.sk-a.sk).slice(0,8);
+const maxGap=topGap[0].sk;
+document.getElementById('p-ringkas').innerHTML = `
+<div class="grid g2">
+  <div class="card"><header><h2>Tren susut bulanan terhadap target</h2>
+    <p class="hint">Garis biru berhenti di bulan realisasi terakhir; bulan sesudahnya masih rencana.
+      Kumulatif masih menanggung Januari–Maret yang buruk dan tidak bisa dihapus lagi.</p></header>
+    ${chartTren()}</div>
+  <div class="card"><header><h2>Komposisi susut</h2>
+    <p class="hint">Teknis adalah rugi alamiah jaringan — punya batas bawah. Non-teknis adalah energi
+      tersalur yang tidak tertagih, dan bisa didekatkan ke nol.</p></header>
+    <div style="display:flex;height:44px;gap:2px;border-radius:7px;overflow:hidden">
+      <div style="background:var(--s1);width:${(K.susut_teknis_persen/(K.susut_teknis_persen+K.susut_nonteknis_persen)*100)}%;
+        display:grid;place-items:center;color:#fff;font-weight:600;font-size:12.5px">${P(K.susut_teknis_persen)}</div>
+      <div style="background:var(--s2);flex:1;display:grid;place-items:center;color:#fff;
+        font-weight:600;font-size:12.5px">${P(K.susut_nonteknis_persen)}</div></div>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Susut teknis</span>
+      <span><i style="background:var(--s2)"></i>Susut non-teknis</span></div>
+    <dl style="display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:14px 0 0;
+      padding-top:12px;border-top:1px solid var(--line);font-size:12px">
+      ${[['Program teknis — capaian',P(K.kontribusi_teknis.capaian_persen,1)],
+         ['Sisa potensi teknis',KW(K.kontribusi_teknis.kwh_sisa)+' kWh'],
+         ['Program non-teknis — capaian',P(K.kontribusi_nonteknis.capaian_persen,1)],
+         ['Sisa potensi non-teknis',KW(K.kontribusi_nonteknis.kwh_sisa)+' kWh']]
+        .map(([a,b])=>`<dt style="color:var(--ink-3)">${a}</dt>
+          <dd class="mono num" style="margin:0;text-align:right;font-weight:600">${b}</dd>`).join('')}
+    </dl></div>
+</div>
+<div class="grid g2 even" style="margin-top:14px">
+  <div class="card"><header><h2>Delapan item dengan sisa potensi kWh terbesar</h2>
+    <p class="hint">Di sinilah gap paling mungkin ditutup — diurut menurut energi yang belum
+      terealisasi, bukan menurut besar targetnya.</p></header>
+    ${rowsHTML(topGap.map(p=>({kode:p.k,judul:p.n,cls:KLS[p.s],chip:null,
+      pct:p.sk/maxGap*100,warna:p.kat==='TEKNIS'?'var(--s1)':'var(--s2)',nilai:N(p.sk)})))}
+    <div class="legend"><span><i style="background:var(--s1)"></i>Teknis</span>
+      <span><i style="background:var(--s2)"></i>Non-teknis</span>
+      <span style="color:var(--ink-3)">Garis tepi kiri = status capaian</span></div></div>
+  <div class="card"><header><h2>Lima penyulang prioritas</h2>
+    <p class="hint">Indeks menggabungkan besaran susut, ketidakseimbangan beban, faktor daya,
+      dan drop tegangan.</p></header>
+    ${rowsHTML([...D.peny].sort((a,b)=>b.ix-a.ix).slice(0,5).map(p=>({
+      kode:p.k,judul:p.n,cls:KLS_P[p.kls],chip:p.kls,pct:p.ix,
+      warna:warnaStatus(KLS_P[p.kls]),nilai:P(p.sp)})))}
+    <p class="hint" style="margin-top:11px">Tiga teratas menanggung
+      ${P(D.peny.slice().sort((a,b)=>b.kw-a.kw).slice(0,3).reduce((s,p)=>s+p.kw,0)
+        / D.peny.reduce((s,p)=>s+p.kw,0)*100,1)} seluruh kWh susut unit.</p></div>
+</div>`;
+
+/* ── Tab 2 · Work plan ───────────────────────────────────────────────── */
+document.getElementById('p-plan').innerHTML = `
+<div class="card"><header><h2>Capaian ${D.prog.length} item work plan</h2>
+  <p class="hint"><b>Faktor kejar</b> = kebutuhan per bulan tersisa dibagi kecepatan bulanan
+    yang sudah tercapai. Nilai 1,0× berarti cukup mempertahankan ritme sekarang; 5,0× berarti
+    pekerjaan harus lima kali lebih cepat — itu permintaan sumber daya, bukan soal imbauan.</p></header>
+  <div class="scroll"><table><thead><tr>
+    <th>Kode</th><th>Item work plan</th><th class="r">Target thn</th><th class="r">Realisasi</th>
+    <th class="r">Capaian</th><th class="r">Sisa</th><th class="r">Butuh/bln</th>
+    <th class="r">Faktor kejar</th><th class="r">Sisa kWh</th><th>Status</th></tr></thead><tbody>
+  ${[...D.prog].sort((a,b)=>a.cp-b.cp).map(p=>{const c=KLS[p.s];return `<tr>
+    <td class="mono" style="font-weight:600">${esc(p.k)}</td>
+    <td>${esc(p.n)}<br><span style="font-size:10.5px;color:var(--ink-3)"
+      class="mono">${esc(p.sub)} · satuan ${esc(p.sat)}</span></td>
+    <td class="r num">${N(p.tt,1)}</td><td class="r num">${N(p.ry,1)}</td>
+    <td class="r"><span style="display:inline-flex;align-items:center;gap:7px">
+      <span class="bar" style="width:52px"><i style="width:${Math.min(100,p.cp)}%;
+        background:${warnaStatus(c)}"></i></span>
+      <span class="num mono" style="font-weight:600">${N(p.cp,1)}%</span></span></td>
+    <td class="r num">${N(p.st,1)}</td><td class="r num">${N(p.kb,1)}</td>
+    <td class="r num mono" style="${p.fk>=2?'color:var(--bad);font-weight:700':''}"
+      >${p.fk?N(p.fk,2)+'×':'–'}</td>
+    <td class="r num">${p.sk>0?N(p.sk):'–'}</td>
+    <td><span class="chip ${c}">${esc(p.s)}</span></td></tr>`}).join('')}
+  </tbody></table></div>
+  <p class="hint" style="margin-top:11px">Item bertanda merah pada kolom faktor kejar menuntut
+    kecepatan yang belum pernah dicapai unit tahun ini. Bawa sebagai satu paket ke UP3 —
+    minta tambahan regu dan percepatan pengadaan, atau ajukan revisi target secara tertulis.</p></div>`;
+
+/* ── Tab 3 · Susut teknis ────────────────────────────────────────────── */
+const NAMA_K={trafo_distribusi:['Trafo distribusi (rugi inti + belitan)','T-01, T-03, T-09'],
+  jaringan_tegangan_rendah:['Jaringan Tegangan Rendah (JTR)','T-02, T-03'],
+  sambungan_rumah_app:['Sambungan Rumah & APP','T-04'],
+  jaringan_tegangan_menengah:['Jaringan Tegangan Menengah (JTM)','T-05, T-06, T-10'],
+  konektor_sambungan:['Konektor & titik sambung','T-07']};
+const totRugi=D.rugi.reduce((s,r)=>s+r.v,0), maxRugi=D.rugi[0].v;
+const spMin=Math.min(...D.peny.map(p=>p.sp)), spMax=Math.max(...D.peny.map(p=>p.sp));
+const heat=v=>{const i=Math.min(5,Math.max(0,Math.round((v-spMin)/(spMax-spMin||1)*5)));
+  return `background:var(--seq${i+1});color:${i>=3?'#fff':'#0C1E24'}`;};
+document.getElementById('p-teknis').innerHTML = `
+<div class="grid g2 even">
+  <div class="card"><header><h2>Di mana energi hilang secara teknis</h2>
+    <p class="hint">Dekomposisi rugi teknis bulan berjalan — total ${N(totRugi)} kWh per bulan,
+      setara ${Rp(totRugi*TARIF)}.</p></header>
+    ${rowsHTML(D.rugi.map(r=>({kode:NAMA_K[r.k][1].split(',')[0],judul:NAMA_K[r.k][0],cls:'',
+      chip:null,pct:r.v/maxRugi*100,warna:'var(--s1)',nilai:N(r.v)})))}
+    <p class="hint" style="margin-top:11px"><b>Yang penting dibaca di sini:</b>
+      ${P((D.rugi.filter(r=>['jaringan_tegangan_rendah','trafo_distribusi'].includes(r.k))
+        .reduce((s,r)=>s+r.v,0))/totRugi*100,0)} rugi teknis ada di sisi tegangan rendah dan trafo,
+      bukan di JTM. Uprating konduktor JTM yang mahal dan lama bukan pengungkit terbesar —
+      trafo sisip dan penyeimbangan beban jauh lebih berdampak per rupiah.</p></div>
+  <div class="card"><header><h2>Ambang batas acuan operasi</h2>
+    <p class="hint">Angka pembanding saat membaca tabel penyulang di bawah.</p></header>
+    <div class="scroll"><table><thead><tr><th>Parameter</th><th class="r">Ambang</th>
+      <th>Tindakan bila terlampaui</th></tr></thead><tbody>
+    ${[['Ketidakseimbangan arus antar fasa','≤ 10%','Di atas 15% wajib penyeimbangan beban dalam 7 hari'],
+       ['Faktor daya (cos φ)','≥ 0,90','Pasang kapasitor bank pada penyulang terkait'],
+       ['Drop tegangan ujung','≤ 5%','Uprating konduktor atau pasang trafo sisip'],
+       ['Panjang sambungan rumah','≤ 30 m','Jadwalkan penggantian SR'],
+       ['Pembebanan trafo','≤ 80%','Uprating trafo atau trafo sisip'],
+       ['Panjang JTR per gardu','≤ 350 m','Pasang trafo sisip untuk memperpendek JTR']]
+      .map(r=>`<tr><td>${r[0]}</td><td class="r mono" style="font-weight:600">${r[1]}</td>
+        <td style="color:var(--ink-2)">${r[2]}</td></tr>`).join('')}
+    </tbody></table></div></div>
+</div>
+<div class="card" style="margin-top:14px"><header><h2>Profil dan peringkat penyulang</h2>
+  <p class="hint">Kolom susut diwarnai dari terang ke gelap mengikuti besarnya
+    (${P(spMin)} → ${P(spMax)}). Nilai yang melewati ambang ditandai merah.</p></header>
+  <div class="scroll"><table><thead><tr>
+    <th>Penyulang</th><th class="r">Susut</th><th class="r">kWh susut/bln</th><th class="r">Unbalance</th>
+    <th class="r">Cos φ</th><th class="r">Drop teg.</th><th class="r">SR &gt; 30 m</th>
+    <th class="r">JTR (kms)</th><th class="r">Gardu</th><th class="r">Indeks</th>
+    <th>Prioritas</th></tr></thead><tbody>
+  ${[...D.peny].sort((a,b)=>b.ix-a.ix).map(p=>{const bad='color:var(--bad);font-weight:700';return `<tr>
+    <td><b class="mono">${esc(p.k)}</b> <span style="color:var(--ink-2)">${esc(p.n)}</span></td>
+    <td class="r"><span class="heat" style="${heat(p.sp)}">${N(p.sp,2)}%</span></td>
+    <td class="r num">${N(p.kw)}</td>
+    <td class="r num" style="${p.ub>15?bad:''}">${N(p.ub,1)}%</td>
+    <td class="r num" style="${p.cp<0.9?bad:''}">${N(p.cp,2)}</td>
+    <td class="r num" style="${p.dv>5?bad:''}">${N(p.dv,1)}%</td>
+    <td class="r num">${N(p.sr)}</td><td class="r num">${N(p.jtr,1)}</td>
+    <td class="r num">${N(p.gd)}</td><td class="r num">${N(p.ix,1)}</td>
+    <td><span class="chip ${KLS_P[p.kls]}">${esc(p.kls)}</span></td></tr>`}).join('')}
+  </tbody></table></div></div>`;
+
+/* ── Tab 4 · Non-teknis ──────────────────────────────────────────────── */
+const tot=D.p2tl.reduce((a,b)=>({pr:a.pr+b.pr,tm:a.tm+b.tm,kwh:a.kwh+b.kwh,tg:a.tg+b.tg,by:a.by+b.by}),
+  {pr:0,tm:0,kwh:0,tg:0,by:0});
+const efek=tot.tg?tot.by/tot.tg*100:0, totKwhGol=D.gol.reduce((s,g)=>s+g.kwh,0);
+document.getElementById('p-nonteknis').innerHTML = `
+<div class="rail" style="margin-top:0">
+  ${[['Susut non-teknis','',P(K.susut_nonteknis_persen),
+      P(K.susut_nonteknis_persen/(K.susut_teknis_persen+K.susut_nonteknis_persen)*100,1)+' dari total susut — seluruhnya berpotensi dipulihkan'],
+     ['kWh temuan P2TL','kWh',KW(tot.kwh),`${N(tot.tm)} temuan dari ${N(tot.pr)} pemeriksaan · hit rate ${P(tot.tm/tot.pr*100,1)}`],
+     ['Tagihan susulan terbit','',Rp(tot.tg),`Terbayar ${Rp(tot.by)}`],
+     ['Efektivitas penagihan','',P(efek,1),`${Rp(tot.tg-tot.by)} belum tertagih — temuan yang belum menjadi pendapatan`]]
+    .map(([l,u,v,s])=>`<div class="tile"><span class="lab">${esc(l)}</span>
+      <span class="val" style="font-size:26px">${v}${u?`<em>${u}</em>`:''}</span>
+      <span class="sub">${esc(s)}</span></div>`).join('')}
+</div>
+<div class="grid g2 even">
+  <div class="card"><header><h2>Perolehan kWh temuan P2TL per bulan</h2>
+    <p class="hint">Energi yang berhasil ditarik kembali lewat penertiban pemakaian tenaga listrik.</p></header>
+    ${chartKolom(D.p2tl.map(m=>({b:m.b,v:m.kwh})),'var(--s1)',v=>N(v/1e3)+' rb',v=>N(v)+' kWh',
+      'kWh temuan P2TL per bulan')}</div>
+  <div class="card"><header><h2>Efektivitas penagihan tagihan susulan</h2>
+    <p class="hint">Sengaja dipisah dari grafik kWh agar dua besaran berbeda tidak dibaca
+      pada satu skala. Temuan baru menurunkan susut setelah tagihannya tertagih.</p></header>
+    ${chartGaris(D.p2tl.map(m=>({b:m.b,v:m.tg?m.by/m.tg*100:0})),'var(--s2)',
+      'Efektivitas penagihan per bulan dalam persen')}</div>
+</div>
+<div class="grid g2 even" style="margin-top:14px">
+  <div class="card"><header><h2>Temuan menurut golongan pelanggaran</h2>
+    <p class="hint">Golongan menentukan rumus tagihan susulan dan cara penindakannya.</p></header>
+    <div class="scroll"><table><thead><tr><th>Gol.</th><th>Uraian</th><th class="r">Temuan</th>
+      <th class="r">kWh</th><th class="r">Porsi</th><th class="r">Tagihan susulan</th></tr></thead><tbody>
+    ${[...D.gol].sort((a,b)=>b.kwh-a.kwh).map(g=>`<tr>
+      <td class="mono" style="font-weight:600">${esc(g.g)}</td>
+      <td style="color:var(--ink-2)">${esc(g.ket)}</td><td class="r num">${N(g.tm)}</td>
+      <td class="r num">${N(g.kwh)}</td><td class="r num">${P(g.kwh/totKwhGol*100,1)}</td>
+      <td class="r num">${Rp(g.rp)}</td></tr>`).join('')}
+    </tbody></table></div></div>
+  <div class="card"><header><h2>Capaian program non-teknis</h2>
+    <p class="hint">Dua belas item yang menyerang penyebab susut non-teknis.</p></header>
+    ${rowsHTML([...D.prog].filter(p=>p.kat==='NON_TEKNIS').sort((a,b)=>a.cp-b.cp).map(p=>({
+      kode:p.k,judul:p.n,cls:KLS[p.s],chip:null,pct:Math.min(100,p.cp),
+      warna:warnaStatus(KLS[p.s]),nilai:N(p.cp,1)+'%'})))}
+    <p class="hint" style="margin-top:11px"><b>Prioritas ada di sini.</b> Sisa potensi non-teknis
+      ${KW(K.kontribusi_nonteknis.kwh_sisa)} kWh — jauh melampaui teknis
+      ${KW(K.kontribusi_teknis.kwh_sisa)} kWh — dan umumnya lebih cepat berbuah karena tidak
+      menunggu pengadaan material jaringan.</p></div>
+</div>`;
+
+/* ── Tab 5 · Rencana aksi ────────────────────────────────────────────── */
+const PR={'SANGAT TINGGI':'p1',TINGGI:'p2',SEDANG:'p3',RUTIN:'p4'};
+const PRC={'SANGAT TINGGI':'bad',TINGGI:'late',SEDANG:'warn',RUTIN:'ok'};
+document.getElementById('p-aksi').innerHTML = `
+<div class="card" style="margin-bottom:14px"><header><h2>Cara memakai halaman ini dalam rapat mingguan</h2>
+  <p class="hint">Bahas hanya prioritas SANGAT TINGGI dan yang berstatus TERLAMBAT — biasanya lima
+    sampai enam baris. Tiga pertanyaan per baris: berapa yang selesai minggu ini, apa penghambatnya
+    (material, regu, izin, atau anggaran), dan apakah kebutuhan per bulan masih masuk akal. Kalau
+    sudah tidak masuk akal, keputusannya menambah sumber daya atau merevisi target — bukan menambah imbauan.</p></header></div>
+<div class="aksi">
+${D.aksi.map(a=>`<article class="act ${PR[a.pr]||'p4'}">
+  <div class="hd"><span class="chip ${PRC[a.pr]||'ok'}">${esc(a.pr)}</span>
+    <span class="chip" style="background:var(--surface-2);color:var(--ink-2)"
+      >${a.kat==='TEKNIS'?'Teknis':'Non-teknis'} · ${esc(a.pk)}</span>
+    <span class="chip ${a.s==='TERLAMBAT'?'bad':a.s==='TERCAPAI'?'ok':'warn'}">${esc(a.s)}</span></div>
+  <h3>${esc(a.a)}</h3>
+  <p class="why"><b>Akar masalah:</b> ${esc(a.am)}</p>
+  <dl>${[['Dampak kWh/bulan',a.dk>0?N(a.dk):'finansial'],
+         ['Dampak s/d Desember',a.ds>0?KW(a.ds)+' kWh':'—'],
+         ['Nilai',a.ds>0?Rp(a.ds*TARIF):'—'],
+         ['Penanggung jawab',a.pic.replace('Supervisor ','SPV ')],
+         ['Target selesai',a.ts],['Progres',N(a.pg,0)+'%']]
+    .map(([t,d])=>`<div><dt>${esc(t)}</dt><dd>${esc(d)}</dd></div>`).join('')}</dl>
+  <div class="bar" style="width:100%;margin-top:10px"><i style="width:${Math.min(100,a.pg)}%;
+    background:${a.pg>=100?'var(--ok)':a.s==='TERLAMBAT'?'var(--bad)':'var(--s1)'}"></i></div>
+</article>`).join('')}</div>`;
+
+/* ── Tab 6 · Simulasi ────────────────────────────────────────────────── */
+const SAL_SISA=88017440, SAL_DES=22480310, BULAN_SISA=K.bulan_tersisa;
+document.getElementById('p-simulasi').innerHTML = `
+<div class="sim">
+  <div class="card"><header><h2>Asumsi</h2>
+    <p class="hint">Geser untuk menguji kemungkinan. Hasil di kanan berubah seketika.</p></header>
+    <div id="sliders"></div>
+    <button class="tema" id="reset" type="button"
+      style="width:100%;border-color:var(--line-2);color:var(--ink-2);margin-top:4px">
+      Kembalikan ke asumsi awal</button></div>
+  <div style="display:flex;flex-direction:column;gap:14px" id="hasil"></div>
+</div>
+<div class="card" style="margin-top:14px"><header><h2>Mengapa ada dua tafsir</h2></header>
+  <div class="scroll"><table><thead><tr><th>Aspek</th>
+    <th>Skenario A — susut kumulatif (YTD)</th><th>Skenario B — susut Desember (exit rate)</th>
+    </tr></thead><tbody>
+  ${[['Cara menghitung','Seluruh kWh susut setahun ÷ seluruh kWh salur setahun',
+      'kWh susut bulan Desember ÷ kWh salur bulan Desember'],
+     ['Beban bulan-bulan awal','Ikut terhitung dan tidak bisa dihapus','Tidak berpengaruh'],
+     ['Susut yang harus dicapai Sep–Des',P(A.susut_sisa_diizinkan_persen),
+      P(K.target_akhir_tahun_persen)+' pada bulan Desember saja'],
+     ['Gap kWh',N(A.gap_kwh_harus_diselamatkan),N(B.gap_kwh_harus_diselamatkan)],
+     ['Tingkat kesulitan',A.tingkat_kesulitan,B.tingkat_kesulitan]]
+    .map(r=>`<tr><td style="font-weight:600">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}
+  </tbody></table></div>
+  <p class="hint" style="margin-top:11px"><b>Pastikan lebih dulu ke UP3 tafsir mana yang dipakai
+    menilai unit</b> sebelum menyusun rencana kerja semester dua — keduanya menuntut kecepatan
+    kerja yang sangat berbeda.</p></div>`;
+
+const AWAL={target:K.target_akhir_tahun_persen,eks:100,dasar:K.susut_bulan_ini_persen,beban:100};
+let S={...AWAL};
+const SPEC=[
+  ['target','Target susut akhir tahun',4.5,7.5,.05,v=>P(v),`Nilai RKAP saat ini ${P(AWAL.target)}`],
+  ['eks','Tingkat eksekusi sisa work plan',0,100,5,v=>N(v)+'%',
+    `100% berarti seluruh sisa target ${KW(K.kwh_selamat_sisa)} kWh tuntas sampai Desember`],
+  ['dasar','Susut dasar tanpa aksi tambahan',4,8,.01,v=>P(v),
+    `Bawaan memakai realisasi bulan terakhir ${P(AWAL.dasar)}`],
+  ['beban','Proyeksi beban Sep–Des',85,125,1,v=>N(v)+'%',
+    'Naikkan bila pertumbuhan beban melebihi rencana']];
+document.getElementById('sliders').innerHTML = SPEC.map(([k,l,mn,mx,st])=>`
+  <div class="slider"><div class="top"><label for="s-${k}">${l}</label>
+    <output id="o-${k}"></output></div>
+    <input type="range" id="s-${k}" min="${mn}" max="${mx}" step="${st}">
+    <p class="h" id="h-${k}"></p></div>`).join('');
+
+function hitung(){
+  const salurSisa=SAL_SISA*S.beban/100, salurDes=SAL_DES*S.beban/100;
+  const salurThn=K.kwh_salur_ytd+salurSisa, hemat=K.kwh_selamat_sisa*S.eks/100;
+  const tanpaAksi=salurSisa*S.dasar/100, denganAksi=Math.max(tanpaAksi-hemat,0);
+  const maks=salurThn*S.target/100, izin=maks-K.kwh_susut_ytd;
+  const proyA=(K.kwh_susut_ytd+denganAksi)/salurThn*100;
+  const hematBln=hemat/BULAN_SISA;
+  const desTanpa=salurDes*S.dasar/100, desDengan=Math.max(desTanpa-hematBln,0);
+  const proyB=desDengan/salurDes*100;
+  return {salurSisa,salurDes,hemat,hematBln,izin,izinPct:izin/salurSisa*100,
+    gapA:tanpaAksi-izin, gapB:desTanpa-salurDes*S.target/100, proyA, proyB,
+    okA:proyA<=S.target, okB:proyB<=S.target};
+}
+function kotak(judul,proy,ok,baris,nota){
+  return `<div class="sc ${ok?'pass':'fail'}"><div class="top"><h3>${judul}</h3>
+    <span class="chip ${ok?'ok':'bad'}">${ok?'TARGET TERCAPAI':'TARGET TIDAK TERCAPAI'}</span></div>
+    <p class="big" style="color:${ok?'var(--ok)':'var(--bad)'}">${P(proy)}</p>
+    <p class="cap">proyeksi dengan asumsi di sebelah kiri · target ${P(S.target)}</p>
+    <dl>${baris.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join('')}</dl>
+    <p class="note">${nota}</p></div>`;
+}
+function render(){
+  SPEC.forEach(([k,,,,,fmt,hint])=>{ const i=document.getElementById('s-'+k);
+    i.value=S[k]; document.getElementById('o-'+k).textContent=fmt(S[k]);
+    document.getElementById('h-'+k).textContent=hint; });
+  const h=hitung();
+  document.getElementById('hasil').innerHTML =
+    kotak('Skenario A — target dibaca sebagai susut kumulatif (YTD)',h.proyA,h.okA,
+      [['kWh susut masih boleh terjadi Sep–Des',N(Math.round(h.izin))],
+       ['Setara susut Sep–Des maksimum',P(h.izinPct)],
+       ['Gap bila tanpa aksi tambahan',N(Math.round(Math.max(h.gapA,0)))],
+       ['Nilai finansial gap',Rp(Math.max(h.gapA,0)*TARIF)],
+       ['kWh diselamatkan dari eksekusi',N(Math.round(h.hemat))]],
+      'Tafsir yang lazim dipakai menilai kinerja RKAP, dan yang paling berat: satu bulan buruk di awal tahun ikut menyeret angka kumulatif sampai Desember.') +
+    kotak('Skenario B — target dibaca sebagai susut bulan Desember',h.proyB,h.okB,
+      [['Penurunan dibutuhkan dari bulan terakhir',N(S.dasar-S.target,2)+' pp'],
+       ['kWh susut maksimum di Desember',N(Math.round(h.salurDes*S.target/100))],
+       ['Penghematan bulanan dari eksekusi',N(Math.round(h.hematBln))],
+       ['Gap bila tanpa aksi tambahan',N(Math.round(Math.max(h.gapB,0)))],
+       ['Nilai finansial gap',Rp(Math.max(h.gapB,0)*TARIF)]],
+      'Menilai kondisi akhir jaringan, bukan rata-rata setahun. Lebih ringan dicapai, dan lebih jujur menggambarkan hasil kerja semester dua.');
+}
+SPEC.forEach(([k])=>document.getElementById('s-'+k)
+  .addEventListener('input',e=>{S[k]=+e.target.value;render();}));
+document.getElementById('reset').addEventListener('click',()=>{S={...AWAL};render();});
+render();
+
+/* ── Tab & tema ──────────────────────────────────────────────────────── */
+const TAB=[['ringkas','Ringkasan'],['plan','Work Plan'],['teknis','Susut Teknis'],
+  ['nonteknis','Susut Non-Teknis'],['aksi','Rencana Aksi'],['simulasi','Simulasi Target']];
+document.getElementById('tabs').innerHTML = TAB.map(([id,l],i)=>
+  `<button role="tab" data-t="${id}" aria-selected="${i===0}"
+    aria-controls="p-${id}">${l}</button>`).join('');
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-t]'); if(!b) return;
+  document.querySelectorAll('#tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  TAB.forEach(([id])=>document.getElementById('p-'+id).hidden = id!==b.dataset.t);
+});
+const root=document.documentElement;
+try{ const t=localStorage.getItem('susutsambo-tema'); if(t) root.dataset.theme=t; }catch(e){}
+document.getElementById('tema').addEventListener('click',()=>{
+  const gelap = root.dataset.theme ? root.dataset.theme==='dark'
+    : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = gelap ? 'light' : 'dark';
+  try{ localStorage.setItem('susutsambo-tema', root.dataset.theme); }catch(e){}
+});
+</script>

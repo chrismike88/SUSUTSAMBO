@@ -1,0 +1,302 @@
+[
+  {
+    "penyulang_kode": "SBJ-01",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 42600,
+    "persen_dari_teknis": 29.21
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 49805,
+    "persen_dari_teknis": 34.15
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 32542,
+    "persen_dari_teknis": 22.32
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 21437,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-01",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 6125,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 35270,
+    "persen_dari_teknis": 28.53
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 41234,
+    "persen_dari_teknis": 33.36
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 27658,
+    "persen_dari_teknis": 22.38
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 18171,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-02",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 5192,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 28938,
+    "persen_dari_teknis": 27.8
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 33831,
+    "persen_dari_teknis": 32.5
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 23038,
+    "persen_dari_teknis": 22.13
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 15302,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-03",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 4372,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 21849,
+    "persen_dari_teknis": 27.42
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 25544,
+    "persen_dari_teknis": 32.05
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 17669,
+    "persen_dari_teknis": 22.17
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 11714,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-04",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 3347,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 21753,
+    "persen_dari_teknis": 26.96
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 25432,
+    "persen_dari_teknis": 31.51
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 17674,
+    "persen_dari_teknis": 21.9
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 11863,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-05",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 3389,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 16463,
+    "persen_dari_teknis": 26.76
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 19247,
+    "persen_dari_teknis": 31.29
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 13533,
+    "persen_dari_teknis": 22.0
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 9042,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-06",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 2583,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 16660,
+    "persen_dari_teknis": 26.57
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 19478,
+    "persen_dari_teknis": 31.07
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 13648,
+    "persen_dari_teknis": 21.77
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 9216,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-07",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 2633,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 13381,
+    "persen_dari_teknis": 26.36
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 15644,
+    "persen_dari_teknis": 30.81
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 11107,
+    "persen_dari_teknis": 21.88
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 7463,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-08",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 2132,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 14080,
+    "persen_dari_teknis": 26.06
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 16461,
+    "persen_dari_teknis": 30.46
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 11675,
+    "persen_dari_teknis": 21.61
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 7943,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-09",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 2269,
+    "persen_dari_teknis": 4.2
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "komponen": "trafo_distribusi",
+    "kwh_rugi": 7562,
+    "persen_dari_teknis": 25.73
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "komponen": "jaringan_tegangan_rendah",
+    "kwh_rugi": 8841,
+    "persen_dari_teknis": 30.08
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "komponen": "sambungan_rumah_app",
+    "kwh_rugi": 6467,
+    "persen_dari_teknis": 22.0
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "komponen": "jaringan_tegangan_menengah",
+    "kwh_rugi": 4320,
+    "persen_dari_teknis": 14.7
+  },
+  {
+    "penyulang_kode": "SBJ-10",
+    "komponen": "konektor_sambungan",
+    "kwh_rugi": 1234,
+    "persen_dari_teknis": 4.2
+  }
+]

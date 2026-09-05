@@ -1,0 +1,11 @@
+kode,nama,jumlah_gardu,kapasitas_kva,panjang_jtm_kms,panjang_jtr_kms,jumlah_pelanggan,susut_persen,unbalance_persen,cos_phi,drop_tegangan_persen,sr_lebih_30m
+SBJ-01,Kuala Samboja,78,8450,61.2,96.4,8940,7.94,21.4,0.86,6.8,412
+SBJ-02,Sungai Merdeka,71,7900,74.8,103.7,8120,7.41,18.9,0.88,7.4,388
+SBJ-03,Handil Baru,64,7250,58.6,88.2,7365,6.88,16.2,0.89,5.9,301
+SBJ-04,Argosari,55,6100,69.4,81.5,6042,6.42,14.8,0.9,6.2,254
+SBJ-05,Bukit Raya,61,6800,52.1,79.8,6580,5.97,13.1,0.91,5.1,226
+SBJ-06,Karya Merdeka,49,5450,63.9,76.3,5318,5.63,12.4,0.92,5.6,198
+SBJ-07,Amborawang,52,5800,57.3,74.9,5704,5.35,11.7,0.92,4.8,175
+SBJ-08,Tani Bhakti,44,4900,71.6,92.1,4836,5.11,10.9,0.93,6.5,163
+SBJ-09,Beringin Agung,51,5650,55.4,81.6,5412,4.86,9.8,0.93,4.4,141
+SBJ-10,Sungai Seluang,49,5300,48.1,74.4,3165,4.52,8.6,0.94,4.1,118

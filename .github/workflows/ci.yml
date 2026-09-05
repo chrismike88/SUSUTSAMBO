@@ -1,0 +1,61 @@
+name: Periksa build
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  periksa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Siapkan Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Siapkan Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Pasang dependensi
+        run: |
+          npm ci
+          python -m pip install --quiet -r requirements.txt
+
+      - name: Periksa konsistensi data master
+        run: python scripts/validate_master.py
+
+      - name: Bangun ulang data, seed SQL, dan dashboard Excel
+        run: python scripts/build_all.py
+
+      - name: Pastikan keluaran hasil generate tidak berbeda dari yang di-commit
+        run: |
+          git diff --stat -- data lib/fallback supabase/migrations docs/02-WORK-PLAN.md dist
+          if ! git diff --quiet -- data lib/fallback supabase/migrations docs/02-WORK-PLAN.md dist; then
+            echo "::error::Berkas hasil generate tidak sinkron. Jalankan 'python3 scripts/build_all.py' lalu commit ulang."
+            exit 1
+          fi
+
+      - name: Bangun aplikasi web
+        run: npm run build
+
+      - name: Unggah dashboard Excel sebagai artefak
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-excel
+          path: dist/*.xlsx
+          if-no-files-found: error
+
+  keamanan:
+    name: Uji Row Level Security
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Jalankan uji Row Level Security
+        run: bash scripts/uji_rls.sh

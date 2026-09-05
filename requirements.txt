@@ -1,0 +1,4 @@
+# Dependensi Python untuk membangkitkan dashboard Excel dan seed basis data.
+# Versi dipatok agar berkas Excel yang dihasilkan identik byte-per-byte di
+# mesin siapa pun — pemeriksaan sinkronisasi di CI membandingkannya langsung.
+XlsxWriter==3.2.9

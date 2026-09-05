@@ -1,0 +1,23 @@
+kode,nama,kategori,sub_kategori,satuan,siklus,pic,kwh_selamat_per_unit,target_tahun
+T-01,Penyeimbangan beban trafo distribusi (balancing),TEKNIS,Trafo,gardu,Bulanan,Supervisor Teknik,950,180
+T-02,Penggantian konduktor JTR usang ke twisted cable,TEKNIS,JTR,kms,Triwulanan,Supervisor Teknik,6200,24.5
+T-03,Pemasangan trafo sisip / uprating trafo overload,TEKNIS,Trafo,unit,Triwulanan,Supervisor Teknik,11500,12
+T-04,Penggantian SR > 30 m & kabel SR usang,TEKNIS,SR/APP,pelanggan,Bulanan,Supervisor Teknik,62,1450
+T-05,Rekonfigurasi / pemecahan beban penyulang,TEKNIS,JTM,penyulang,Semesteran,Supervisor Teknik,21000,6
+T-06,Pemasangan kapasitor bank (perbaikan cos phi),TEKNIS,JTM,unit,Semesteran,Supervisor Teknik,13800,8
+T-07,Penggantian konektor & retensioning sambungan,TEKNIS,Konektor,titik,Bulanan,Supervisor Teknik,145,620
+T-08,Pemasangan alat ukur (AMR) sisi gardu distribusi,TEKNIS,Trafo,unit,Triwulanan,Supervisor Teknik,1350,45
+T-09,Pemeliharaan preventif & perbaikan grounding gardu,TEKNIS,Trafo,gardu,Bulanan,Supervisor Teknik,310,240
+T-10,Uprating konduktor JTM (AAAC 150 mm2),TEKNIS,JTM,kms,Semesteran,Supervisor Teknik,8900,9.8
+N-01,P2TL - pencapaian Target Operasi (TO),NON_TEKNIS,P2TL,pelanggan,Bulanan,Supervisor Transaksi Energi,0,3600
+N-02,P2TL - perolehan kWh temuan pelanggaran,NON_TEKNIS,P2TL,kWh,Bulanan,Supervisor Transaksi Energi,1.0,1150000
+N-03,P2TL - realisasi penagihan tagihan susulan,NON_TEKNIS,P2TL,Rp juta,Bulanan,Supervisor Transaksi Energi,0,3400
+N-04,Penggantian kWh meter rusak / macet / buram,NON_TEKNIS,APP,unit,Bulanan,Supervisor Transaksi Energi,96,2750
+N-05,Penggantian kWh meter tua (> 15 tahun),NON_TEKNIS,APP,unit,Triwulanan,Supervisor Transaksi Energi,71,1900
+N-06,"Pemasangan / normalisasi AMR pelanggan >= 41,5 kVA",NON_TEKNIS,AMR,pelanggan,Bulanan,Supervisor Transaksi Energi,1480,168
+N-07,Pemeriksaan APP pelanggan potensial (>= 3.500 VA),NON_TEKNIS,APP,pelanggan,Bulanan,Supervisor Transaksi Energi,58,2400
+N-08,Penurunan DLPD (Daftar Langganan Perlu Diperhatikan),NON_TEKNIS,Baca Meter,rekening,Bulanan,Supervisor Pelayanan Pelanggan,44,4200
+N-09,Penertiban & pemeteran PJU ilegal,NON_TEKNIS,PJU,titik,Triwulanan,Supervisor Transaksi Energi,640,320
+N-10,Validasi faktor kali & Data Induk Langganan (DIL),NON_TEKNIS,Administrasi,pelanggan,Bulanan,Supervisor Pelayanan Pelanggan,118,1100
+N-11,Peningkatan akurasi baca meter (foto stand / RBM),NON_TEKNIS,Baca Meter,rekening,Bulanan,Supervisor Pelayanan Pelanggan,12,12000
+N-12,Penormalan sambungan langsung / sambungan liar,NON_TEKNIS,P2TL,titik,Bulanan,Supervisor Transaksi Energi,890,210
