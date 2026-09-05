@@ -58,11 +58,12 @@ export default function Navigasi({
             SB
           </span>
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold leading-tight">
-              Monitoring Susut — {unit.nama}
+            <p className="truncate text-sm font-bold leading-tight tracking-wide">
+              SUSUTSAMBO
+              <span className="ml-2 text-xs font-normal opacity-60">Monitoring Susut Energi</span>
             </p>
             <p className="truncate text-xs leading-tight opacity-70">
-              {unit.up3} · data {periode}
+              {unit.nama} · {unit.up3} · data {periode}
             </p>
           </div>
         </div>

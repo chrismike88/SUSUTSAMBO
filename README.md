@@ -1,4 +1,6 @@
-# Monitoring Susut — ULP Samboja
+# SUSUTSAMBO
+
+**Monitoring Susut Energi — ULP Samboja**
 
 Sistem pemantauan penurunan **susut teknis** dan **susut non-teknis** untuk
 ULP Samboja (UP3 Balikpapan, UID Kalimantan Timur & Kalimantan Utara), terdiri

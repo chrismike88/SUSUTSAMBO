@@ -1,8 +1,8 @@
 {
-  "name": "monitoring-susut-ulp-samboja",
+  "name": "susutsambo",
   "version": "1.0.0",
   "private": true,
-  "description": "Dashboard monitoring susut teknis & non-teknis ULP Samboja",
+  "description": "SUSUTSAMBO \u2014 dashboard monitoring susut teknis & non-teknis ULP Samboja",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

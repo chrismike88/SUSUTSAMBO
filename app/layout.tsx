@@ -5,11 +5,12 @@ import { getDataset } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: {
-    default: "Monitoring Susut — ULP Samboja",
-    template: "%s · Monitoring Susut ULP Samboja",
+    default: "SUSUTSAMBO — Monitoring Susut ULP Samboja",
+    template: "%s · SUSUTSAMBO",
   },
+  applicationName: "SUSUTSAMBO",
   description:
-    "Dashboard monitoring penurunan susut teknis dan non-teknis ULP Samboja: " +
+    "SUSUTSAMBO — dashboard monitoring penurunan susut teknis dan non-teknis ULP Samboja: " +
     "capaian work plan per item, analisis penyulang, P2TL, dan simulasi target akhir tahun.",
 };
 
