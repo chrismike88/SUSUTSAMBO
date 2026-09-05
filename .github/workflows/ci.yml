@@ -35,8 +35,8 @@ jobs:
 
       - name: Pastikan keluaran hasil generate tidak berbeda dari yang di-commit
         run: |
-          git diff --stat -- data lib/fallback supabase/migrations
-          if ! git diff --quiet -- data lib/fallback supabase/migrations; then
+          git diff --stat -- data lib/fallback supabase/migrations docs/02-WORK-PLAN.md dist
+          if ! git diff --quiet -- data lib/fallback supabase/migrations docs/02-WORK-PLAN.md dist; then
             echo "::error::Berkas hasil generate tidak sinkron. Jalankan 'python3 scripts/build_all.py' lalu commit ulang."
             exit 1
           fi

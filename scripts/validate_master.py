@@ -31,6 +31,19 @@ def peringatan(pesan: str) -> None:
     PERINGATAN.append(pesan)
 
 
+def galat_kelompok(pola: str, daftar: list) -> None:
+    """Satu pesan untuk banyak baris bermasalah yang sejenis.
+
+    Menghindari 12 baris 'kwh_salur harus lebih besar dari nol' saat kerangka
+    kosong baru mulai diisi — jauh lebih mudah dibaca sebagai satu baris."""
+    if not daftar:
+        return
+    isi = ", ".join(str(x) for x in daftar[:12])
+    if len(daftar) > 12:
+        isi += f", … ({len(daftar)} seluruhnya)"
+    galat(f"{pola}: {isi}")
+
+
 def ringkas(pesan_list: list[str]) -> list[str]:
     """Gabungkan pesan kembar menjadi satu baris beserta jumlahnya."""
     urut: list[str] = []
@@ -52,9 +65,17 @@ def fmt(v: float, desimal: int = 1) -> str:
 
 
 # ---------------------------------------------------------------------------
-def periksa_kolom(nama: str, baris: list[dict], wajib: set[str]) -> bool:
+def periksa_kolom(nama: str, baris: list[dict], wajib: set[str],
+                  boleh_kosong: bool = False) -> bool:
+    """Pastikan berkas punya kolom yang dibutuhkan.
+
+    `boleh_kosong` untuk berkas yang wajar belum terisi di awal — kekosongannya
+    dilaporkan sebagai peringatan, bukan galat yang menghentikan build."""
     if not baris:
-        galat(f"{nama}: tidak ada satu pun baris data.")
+        if boleh_kosong:
+            peringatan(f"{nama}: belum ada satu pun baris data.")
+        else:
+            galat(f"{nama}: tidak ada satu pun baris data.")
         return False
     kurang = wajib - set(baris[0].keys())
     if kurang:
@@ -164,6 +185,8 @@ def periksa_neraca() -> None:
 
     bulan_ada = set()
     realisasi_bulan = []
+    salur_kosong: list[int] = []
+    jual_kosong: list[int] = []
     for b in baris:
         m = ds.bulat(b["bulan"], 0) or 0
         if not 1 <= m <= 12:
@@ -183,10 +206,10 @@ def periksa_neraca() -> None:
         salur = ds.bulat(b["kwh_salur"], 0) or 0
         jual = ds.bulat(b["kwh_jual"], 0) or 0
         if salur <= 0:
-            galat(f"neraca.csv [bulan {m}]: kwh_salur harus lebih besar dari nol.")
+            salur_kosong.append(m)
             continue
         if jual <= 0:
-            galat(f"neraca.csv [bulan {m}]: kwh_jual harus lebih besar dari nol.")
+            jual_kosong.append(m)
             continue
         if jual > salur:
             galat(f"neraca.csv [bulan {m}]: kwh_jual ({fmt(jual, 0)}) melebihi "
@@ -199,6 +222,9 @@ def periksa_neraca() -> None:
         porsi = ds.angka(b["porsi_teknis"], 0.0) or 0.0
         if not 0 < porsi < 1:
             galat(f"neraca.csv [bulan {m}]: porsi_teknis {porsi} harus antara 0 dan 1.")
+
+    galat_kelompok("neraca.csv: kwh_salur belum diisi pada bulan", salur_kosong)
+    galat_kelompok("neraca.csv: kwh_jual belum diisi pada bulan", jual_kosong)
 
     if realisasi_bulan:
         harus = list(range(1, max(realisasi_bulan) + 1))
@@ -217,6 +243,8 @@ def periksa_program() -> set[str]:
         return set()
 
     kode_set: set[str] = set()
+    target_kosong: list[str] = []
+    pic_kosong: list[str] = []
     for b in baris:
         k = b["kode"].strip()
         if k in kode_set:
@@ -226,11 +254,15 @@ def periksa_program() -> set[str]:
             galat(f"program.csv [{k}]: kategori harus TEKNIS atau NON_TEKNIS, "
                   f"ditemukan '{b['kategori']}'.")
         if (ds.angka(b["target_tahun"], 0.0) or 0.0) <= 0:
-            galat(f"program.csv [{k}]: target_tahun harus lebih besar dari nol.")
+            target_kosong.append(k)
         if (ds.angka(b["kwh_selamat_per_unit"], 0.0) or 0.0) < 0:
             galat(f"program.csv [{k}]: kwh_selamat_per_unit tidak boleh negatif.")
         if not b["pic"].strip():
-            peringatan(f"program.csv [{k}]: kolom PIC masih kosong.")
+            pic_kosong.append(k)
+    galat_kelompok("program.csv: target_tahun belum diisi pada item", target_kosong)
+    if pic_kosong:
+        peringatan("program.csv: kolom PIC masih kosong pada item "
+                   + ", ".join(pic_kosong[:12]))
     return kode_set
 
 
@@ -257,12 +289,13 @@ def periksa_program_bulanan(kode_program: set[str]) -> None:
     target_tahun = {p["kode"]: ds.angka(p["target_tahun"], 0.0) or 0.0
                     for p in ds.baca_csv("program.csv")}
 
+    kurang_baris: list[str] = []
+    realisasi_kosong: list[str] = []
     for k in sorted(kode_program):
         bulan = per_kode.get(k, {})
         hilang = [m for m in range(1, 13) if m not in bulan]
         if hilang:
-            galat(f"program_bulanan.csv [{k}]: baris bulan belum lengkap, "
-                  f"kurang {hilang}.")
+            kurang_baris.append(f"{k} (bulan {','.join(map(str, hilang))})")
             continue
 
         total_target = sum(ds.angka(bulan[m]["target_volume"], 0.0) or 0.0
@@ -275,25 +308,33 @@ def periksa_program_bulanan(kode_program: set[str]) -> None:
         for m in range(1, 13):
             r = ds.angka(bulan[m]["realisasi_volume"], None)
             if m <= ds.BULAN_REALISASI and r is None:
-                peringatan(f"program_bulanan.csv [{k}]: realisasi bulan {m} masih "
-                           "kosong padahal bulan itu sudah berstatus REALISASI.")
+                realisasi_kosong.append(f"{k}/bln{m}")
             if m > ds.BULAN_REALISASI and r is not None:
                 galat(f"program_bulanan.csv [{k}]: bulan {m} sudah berisi realisasi "
                       "padahal neraca.csv masih menandainya PROYEKSI.")
             if r is not None and r < 0:
                 galat(f"program_bulanan.csv [{k}]: realisasi bulan {m} negatif.")
 
+    galat_kelompok("program_bulanan.csv: baris bulan belum lengkap untuk", kurang_baris)
+    if realisasi_kosong:
+        peringatan("program_bulanan.csv: realisasi masih kosong padahal bulannya "
+                   "sudah REALISASI → " + ", ".join(realisasi_kosong[:12])
+                   + (f", … ({len(realisasi_kosong)} seluruhnya)"
+                      if len(realisasi_kosong) > 12 else ""))
+
 
 def periksa_susut_penyulang(kode_penyulang: set[str]) -> None:
     baris = ds.baca_csv("susut_penyulang.csv")
     if not periksa_kolom("susut_penyulang.csv", baris,
-                         {"penyulang_kode", "bulan", "susut_persen"}):
+                         {"penyulang_kode", "bulan", "susut_persen"},
+                         boleh_kosong=True):
         return
     ada: dict[str, set[int]] = {}
+    kode_asing: set[str] = set()
     for b in baris:
         k = b["penyulang_kode"].strip()
         if k not in kode_penyulang:
-            galat(f"susut_penyulang.csv: kode '{k}' tidak ada di penyulang.csv.")
+            kode_asing.add(k)
             continue
         m = ds.bulat(b["bulan"], 0) or 0
         ada.setdefault(k, set()).add(m)
@@ -301,17 +342,24 @@ def periksa_susut_penyulang(kode_penyulang: set[str]) -> None:
         if not 0 <= s < 30:
             galat(f"susut_penyulang.csv [{k} bulan {m}]: susut_persen {s} "
                   "di luar rentang wajar 0–30%.")
+    galat_kelompok("susut_penyulang.csv: kode tidak ada di penyulang.csv",
+                   sorted(kode_asing))
+    belum: list[str] = []
     for k in sorted(kode_penyulang):
         hilang = [m for m in range(1, ds.BULAN_REALISASI + 1) if m not in ada.get(k, set())]
         if hilang:
-            peringatan(f"susut_penyulang.csv [{k}]: belum ada data bulan {hilang}.")
+            belum.append(f"{k} (bulan {','.join(map(str, hilang))})")
+    if belum:
+        peringatan("susut_penyulang.csv: belum ada data untuk " + ", ".join(belum[:8])
+                   + (f", … ({len(belum)} penyulang)" if len(belum) > 8 else ""))
 
 
 def periksa_action_plan(kode_program: set[str]) -> None:
     baris = ds.baca_csv("action_plan.csv")
     if not periksa_kolom("action_plan.csv", baris, {
             "no", "prioritas", "kategori", "program_kode", "aksi",
-            "akar_masalah", "target_selesai", "pic", "status", "progres_persen"}):
+            "akar_masalah", "target_selesai", "pic", "status", "progres_persen"},
+            boleh_kosong=True):
         return
     sah_status = {"RENCANA", "BERJALAN", "TERLAMBAT", "TERCAPAI", "BATAL"}
     for b in baris:

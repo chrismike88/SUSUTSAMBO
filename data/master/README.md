@@ -144,6 +144,37 @@ disasar.
 
 ---
 
+## Mulai dari kerangka kosong (disarankan sebelum data bulanan diisi)
+
+Isi bawaan folder ini masih **data contoh** — nama penyulang seperti
+"Kuala Samboja" atau "Sungai Merdeka" adalah rekaan, bukan penyulang riil.
+Agar nama rekaan tidak diam-diam terbawa ke produksi, tersedia kerangka kosong
+di `data/master/template/`:
+
+```bash
+python3 scripts/siapkan_template.py          # buat/segarkan kerangka kosong
+# isi berkas di data/master/template/ dengan data riil
+python3 scripts/siapkan_template.py --pakai  # pasang kerangka menjadi data master
+python3 scripts/validate_master.py           # pemeriksa menyebut apa yang masih kurang
+python3 scripts/build_all.py
+```
+
+Perintah `--pakai` mencadangkan data contoh lebih dulu ke
+`data/master_contoh_cadangan/`, sehingga demo lama tetap bisa dipulihkan.
+
+Kerangka sengaja mempertahankan dua hal sebagai titik mulai:
+
+- **daftar kunci parameter** — tinggal diisi nilainya;
+- **katalog 22 item work plan** — sebagian besar item penurunan susut sama di
+  seluruh ULP, jadi lebih cepat menyunting daripada mengetik dari nol. Silakan
+  tambah, hapus, atau ganti sesuai work plan yang benar-benar berlaku di unit.
+
+Baris bulanan `program_bulanan.csv` dibangkitkan otomatis mengikuti isi
+`program.csv` — dua belas baris per item, tanpa perlu diketik manual. Jalankan
+ulang `siapkan_template.py` setiap kali daftar item work plan berubah.
+
+---
+
 ## Urutan penggantian data yang disarankan
 
 1. `unit.csv` dan `parameter.csv` — identitas dan angka acuan.

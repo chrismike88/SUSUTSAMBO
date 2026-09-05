@@ -39,6 +39,14 @@ Seluruh angka masukan ada di **`data/master/`** sebagai berkas CSV biasa —
 delapan berkas, semuanya bisa disunting di Excel tanpa menyentuh kode. Panduan
 kolom per kolom ada di [`data/master/README.md`](data/master/README.md).
 
+> **Sebelum data bulanan mulai diisi**, ganti data contoh dengan kondisi riil
+> unit. Tersedia kerangka kosong agar nama penyulang rekaan tidak terbawa ke
+> produksi:
+> ```bash
+> python3 scripts/siapkan_template.py          # buat kerangka kosong
+> python3 scripts/siapkan_template.py --pakai  # pasang setelah diisi
+> ```
+
 Situs berjalan **tanpa perlu Supabase** — ia memakai data contoh bawaan dan
 menandai dirinya "Data contoh". Untuk menyambungkannya ke basis data, ikuti
 [`docs/03-PANDUAN-DEPLOY.md`](docs/03-PANDUAN-DEPLOY.md).
@@ -94,6 +102,7 @@ seluruh grafik ikut berubah dengan sendirinya.
 ├── scripts/
 │   ├── dataset.py        Membaca CSV master, menghitung angka turunan
 │   ├── validate_master.py  Pemeriksa konsistensi data master
+│   ├── siapkan_template.py Kerangka kosong untuk data riil
 │   ├── build_sql.py      → seed Supabase
 │   ├── build_excel.py    → dashboard Excel
 │   ├── build_docs.py     → dokumen work plan

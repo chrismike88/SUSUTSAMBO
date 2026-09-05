@@ -12,6 +12,7 @@ Output: dist/Dashboard_Susut_ULP_Samboja_2026.xlsx
 """
 from __future__ import annotations
 
+import datetime as dt
 import json
 from pathlib import Path
 
@@ -1319,11 +1320,15 @@ def sheet_panduan(wb, F) -> None:
 def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
     wb = xlsxwriter.Workbook(str(OUT), {"nan_inf_to_errors": True})
+    # Tanggal dibuat sengaja diikat ke periode data, bukan ke waktu build.
+    # Tanpa ini setiap build menghasilkan berkas yang berbeda hanya karena
+    # stempel waktunya, sehingga riwayat git penuh perubahan semu.
     wb.set_properties({
         "title": "Dashboard Monitoring Susut ULP Samboja",
         "subject": "Monitoring susut teknis & non-teknis",
-        "author": "ULP Samboja", "company": UNIT["up3"],
+        "author": UNIT["nama"], "company": UNIT["up3"],
         "comments": META["catatan"],
+        "created": dt.datetime(META["tahun"], MR, 1),
     })
     F = buat_format(wb)
 

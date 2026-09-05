@@ -1,0 +1,13 @@
+kunci,nilai,satuan,keterangan
+tarif_rata_rata,,Rp/kWh,Harga jual rata-rata untuk konversi kWh ke Rupiah
+target_susut_akhir_tahun,,%,Target susut jaringan distribusi akhir tahun (RKAP)
+baseline_susut_2025,,%,Realisasi susut tahun sebelumnya
+floor_susut_teknis,,%,Batas bawah susut teknis yang realistis pada jaringan eksisting
+ambang_tercapai,,%,Ambang status TERCAPAI
+ambang_waspada,,%,Ambang status WASPADA
+ambang_terlambat,,%,Ambang status TERLAMBAT
+jumlah_pelanggan,,pelanggan,Jumlah pelanggan terpasang
+jumlah_gardu,,unit,Jumlah gardu distribusi
+jumlah_penyulang,,unit,Jumlah penyulang 20 kV
+panjang_jtm_kms,,kms,Panjang jaringan tegangan menengah
+panjang_jtr_kms,,kms,Panjang jaringan tegangan rendah
